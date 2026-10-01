@@ -19,11 +19,11 @@ import {
   WTabs,
   WTooltip,
   type WNavItem,
-} from "wizui"
+} from "wispui"
 import { docsNav } from "../nav"
 
 const theme = `@import "tailwindcss";
-@import "wizui/theme.css";`
+@import "wispui/theme.css";`
 
 const cta =
   "inline-flex items-center justify-center rounded-md px-3.5 py-2 text-sm font-medium"
@@ -51,7 +51,7 @@ function Preview() {
         <span className="size-2.5 rounded-full bg-neutral-200" />
         <span className="size-2.5 rounded-full bg-neutral-200" />
         <span className="size-2.5 rounded-full bg-neutral-200" />
-        <span className="mx-auto font-mono text-xs text-neutral-400">wizui</span>
+        <span className="mx-auto font-mono text-xs text-neutral-400">wispui</span>
         <span className="flex items-center gap-1">
           <WKbd value="meta" />
           <WKbd value="K" />
@@ -164,10 +164,10 @@ export function HomePage() {
       <header className="sticky top-0 z-20 border-b border-neutral-200/80 bg-white/90 backdrop-blur">
         <WContainer className="flex h-14 items-center justify-between">
           <WLink raw href="/" className="text-sm font-semibold tracking-tight">
-            wizui
+            wispui
           </WLink>
           <div className="flex items-center gap-3">
-            <WLink href="https://github.com/oguzhanaydiin/wizui" target="_blank">
+            <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">
               GitHub
             </WLink>
             <WLink raw href="/button" className={primaryCta}>
@@ -182,7 +182,7 @@ export function HomePage() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--color-primary-100),transparent_58%)]" />
           <WContainer className="relative py-16 lg:py-24">
             <div className="mx-auto max-w-2xl space-y-5 text-center">
-              <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">wizui</h1>
+              <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">wispui</h1>
               <p className="text-xl font-medium text-neutral-800 sm:text-2xl">
                 The React component library.
               </p>
@@ -195,7 +195,7 @@ export function HomePage() {
                 </WLink>
                 <WLink
                   raw
-                  href="https://github.com/oguzhanaydiin/wizui"
+                  href="https://github.com/oguzhanaydiin/wispui"
                   target="_blank"
                   className={outlineCta}
                 >
@@ -211,7 +211,7 @@ export function HomePage() {
         <WContainer id="get-started" className="scroll-mt-20 space-y-10 py-16">
           <div className="space-y-4">
             <h2 className="text-xl font-semibold tracking-tight">Get started</h2>
-            <WCodeBlock filename="terminal" code="npm i wizui" />
+            <WCodeBlock filename="terminal" code="npm i wispui" />
             <div className="space-y-2">
               <p className="text-sm font-medium">Add the theme</p>
               <WCodeBlock language="css" filename="app.css" code={theme} />
@@ -256,7 +256,7 @@ export function HomePage() {
       <footer className="border-t border-neutral-200">
         <WContainer className="flex h-14 items-center justify-between text-sm text-neutral-500">
           <span>MIT</span>
-          <WLink href="https://github.com/oguzhanaydiin/wizui" target="_blank">
+          <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">
             GitHub
           </WLink>
         </WContainer>

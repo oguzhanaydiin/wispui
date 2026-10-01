@@ -1,4 +1,4 @@
-import { WAvatar, WTooltip } from "wizui"
+import { WAvatar, WTooltip } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const colors = ["primary", "secondary", "success", "info", "warning", "error", "neutral"] as const

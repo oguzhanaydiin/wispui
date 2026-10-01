@@ -1,4 +1,4 @@
-import { WLink } from "wizui"
+import { WLink } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 export function LinkPage() {
@@ -19,7 +19,7 @@ export function LinkPage() {
         <div className="flex flex-wrap gap-4">
           <WLink href="/">Button</WLink>
           <WLink href="/badge">Badge</WLink>
-          <WLink href="https://github.com/oguzhanaydiin/wizui" target="_blank">
+          <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">
             GitHub
           </WLink>
         </div>

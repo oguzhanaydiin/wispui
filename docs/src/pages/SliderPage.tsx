@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WFormField, WSlider } from "wizui"
+import { WFormField, WSlider } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function LiveDemo() {

@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { WAccordion, type WAccordionItem } from "wizui"
+import { WAccordion, type WAccordionItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const items: WAccordionItem[] = [
   {
-    label: "Is wizui free?",
+    label: "Is wispui free?",
     content: "Yes. MIT. Native HTML, no Radix.",
     icon: "info",
   },
@@ -46,7 +46,7 @@ export function AccordionPage() {
 
       <Code>{`<WAccordion
   items={[
-    { label: "Is wizui free?", content: "Yes. MIT." },
+    { label: "Is wispui free?", content: "Yes. MIT." },
     { label: "Does it need Next?", content: "No." },
   ]}
 />`}</Code>

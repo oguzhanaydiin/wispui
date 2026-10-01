@@ -1,4 +1,4 @@
-import { WBadge } from "wizui"
+import { WBadge } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function Star() {

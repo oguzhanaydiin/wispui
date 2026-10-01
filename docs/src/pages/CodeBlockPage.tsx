@@ -1,4 +1,4 @@
-import { WCodeBlock } from "wizui"
+import { WCodeBlock } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const sample = `function greet(name: string) {
@@ -52,7 +52,7 @@ export function CodeBlockPage() {
 
       <Section title="No copy" description="copy={false} hides the button.">
         <WCodeBlock language="bash" copy={false}>
-          {`npm i wizui`}
+          {`npm i wispui`}
         </WCodeBlock>
       </Section>
 

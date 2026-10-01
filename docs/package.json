@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "wizui": "^0.0.0"
+    "wispui": "^0.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

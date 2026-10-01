@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WFormField, WSwitch } from "wizui"
+import { WFormField, WSwitch } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function NotificationsDemo() {

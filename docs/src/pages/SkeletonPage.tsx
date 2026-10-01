@@ -1,4 +1,4 @@
-import { WCard, WSkeleton } from "wizui"
+import { WCard, WSkeleton } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 export function SkeletonPage() {

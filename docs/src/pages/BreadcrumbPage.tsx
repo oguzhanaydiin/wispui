@@ -1,4 +1,4 @@
-import { WBreadcrumb, type WBreadcrumbItem } from "wizui"
+import { WBreadcrumb, type WBreadcrumbItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const items: WBreadcrumbItem[] = [

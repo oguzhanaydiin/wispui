@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WPagination, WTable } from "wizui"
+import { WPagination, WTable } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const items = Array.from({ length: 42 }, (_, index) => ({

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WFormField, WRadioGroup, type WRadioItem } from "wizui"
+import { WFormField, WRadioGroup, type WRadioItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const plans: WRadioItem[] = [

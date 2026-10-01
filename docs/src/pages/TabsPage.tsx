@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WTabs, type WTabsItem } from "wizui"
+import { WTabs, type WTabsItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const items: WTabsItem[] = [

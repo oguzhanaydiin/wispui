@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WButton, WFormField, WInput } from "wizui"
+import { WButton, WFormField, WInput } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function ErrorDemo() {

@@ -1,4 +1,4 @@
-import { WButton, WModal, confirm, toast, useOverlay, type OverlayClose } from "wizui"
+import { WButton, WModal, confirm, toast, useOverlay, type OverlayClose } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function Note({ close }: { close: OverlayClose }) {
@@ -28,7 +28,7 @@ export function ToastPage() {
         <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">Components</p>
         <h1 className="text-3xl font-semibold tracking-tight">Toast</h1>
         <p className="text-neutral-500">
-          Wrap the app in <code className="text-neutral-800">WizProvider</code>. Then{" "}
+          Wrap the app in <code className="text-neutral-800">WispProvider</code>. Then{" "}
           <code className="text-neutral-800">toast.add()</code> and{" "}
           <code className="text-neutral-800">await confirm()</code> work from anywhere. Confirm is not a
           component you put in JSX. It is a function that mounts{" "}
@@ -36,9 +36,9 @@ export function ToastPage() {
         </p>
       </header>
 
-      <Code>{`<WizProvider>
+      <Code>{`<WispProvider>
   <App />
-</WizProvider>
+</WispProvider>
 
 toast.add({ title: "Saved", color: "success" })
 
@@ -123,7 +123,7 @@ const ok = await confirm({ title: "Delete?", color: "error" })`}</Code>
 
       <Section
         title="Confirm"
-        description="No WModal on this page. confirm() tells WizProvider to mount one. Same dialog as Modal, opened from a function."
+        description="No WModal on this page. confirm() tells WispProvider to mount one. Same dialog as Modal, opened from a function."
       >
         <div className="flex flex-wrap gap-2">
           <WButton
@@ -221,8 +221,8 @@ const ok = await confirm({ title: "Delete?", color: "error" })`}</Code>
                 ["actions", "{ label, color, variant, icon, onClick }[]", "-"],
                 ["confirm.confirmLabel", "string", "Confirm"],
                 ["confirm.cancelLabel", "string", "Cancel"],
-                ["WizProvider toaster.position", "top-|bottom- + left|center|right", "bottom-right"],
-                ["WizProvider toaster.max", "number", "5"],
+                ["WispProvider toaster.position", "top-|bottom- + left|center|right", "bottom-right"],
+                ["WispProvider toaster.max", "number", "5"],
               ].map(([name, type, fallback]) => (
                 <tr key={name}>
                   <td className="px-3 py-2 font-mono text-xs">{name}</td>

@@ -1,4 +1,4 @@
-import { WButton, WButtonGroup, WInput } from "wizui"
+import { WButton, WButtonGroup, WInput } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 export function ButtonGroupPage() {

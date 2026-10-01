@@ -1,4 +1,4 @@
-import { WButton, WInput, WSlideover, useOverlay, type OverlayClose } from "wizui"
+import { WButton, WInput, WSlideover, useOverlay, type OverlayClose } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function SettingsPanel({ close }: { close: OverlayClose }) {
@@ -89,7 +89,7 @@ export function SlideoverPage() {
         </WSlideover>
       </Section>
 
-      <Section title="Overlay" description="useOverlay().create(Panel).open(). Needs WizProvider, same as confirm.">
+      <Section title="Overlay" description="useOverlay().create(Panel).open(). Needs WispProvider, same as confirm.">
         <WButton
           color="neutral"
           variant="outline"

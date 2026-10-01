@@ -1,4 +1,4 @@
-import { WInput, WKbd } from "wizui"
+import { WInput, WKbd } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const colors = ["primary", "secondary", "success", "info", "warning", "error", "neutral"] as const

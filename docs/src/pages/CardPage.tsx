@@ -1,4 +1,4 @@
-import { WBadge, WButton, WCard } from "wizui"
+import { WBadge, WButton, WCard } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 export function CardPage() {
