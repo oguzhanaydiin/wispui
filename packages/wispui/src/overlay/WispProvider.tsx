@@ -19,7 +19,7 @@ const positions: Record<ToastPosition, string> = {
   "bottom-right": "bottom-4 right-4 items-end",
 }
 
-export interface WizProviderProps {
+export interface WispProviderProps {
   children?: ReactNode
   toaster?: {
     position?: ToastPosition
@@ -28,7 +28,7 @@ export interface WizProviderProps {
   }
 }
 
-export function WizProvider({ children, toaster }: WizProviderProps) {
+export function WispProvider({ children, toaster }: WispProviderProps) {
   configureToaster(toaster)
   const overlays = useSyncExternalStore(subscribeOverlays, getOverlays, getOverlays)
   const toasts = useSyncExternalStore(subscribeToasts, getToasts, getToasts)

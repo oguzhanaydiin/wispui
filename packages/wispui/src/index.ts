@@ -63,7 +63,7 @@ export { WTabs, type WTabsItem, type WTabsProps, type WTabsVariant } from "./com
 export { WTextarea, type WTextareaProps, type WTextareaResize } from "./components/WTextarea"
 export { WToast, type WToastProps } from "./components/WToast"
 export { WTooltip, type WTooltipProps } from "./components/WTooltip"
-export { WizProvider, type WizProviderProps } from "./overlay/WizProvider"
+export { WispProvider, type WispProviderProps } from "./overlay/WispProvider"
 export { confirm, type ConfirmOptions } from "./overlay/confirm"
 export {
   createOverlay,

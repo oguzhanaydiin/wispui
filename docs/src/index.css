@@ -1,3 +1,3 @@
 @import "tailwindcss";
-@import "wizui/theme.css";
-@source "../../packages/wizui/src";
+@import "wispui/theme.css";
+@source "../../packages/wispui/src";
