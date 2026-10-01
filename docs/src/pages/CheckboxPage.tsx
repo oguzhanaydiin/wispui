@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WCheckbox, WFormField } from "wizui"
+import { WCheckbox, WFormField } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function TermsDemo() {

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WButton, WProgress } from "wizui"
+import { WButton, WProgress } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function LiveDemo() {

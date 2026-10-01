@@ -1,4 +1,4 @@
-import { WAvatar, WAvatarGroup, WChip, WTooltip } from "wizui"
+import { WAvatar, WAvatarGroup, WChip, WTooltip } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 export function AvatarGroupPage() {

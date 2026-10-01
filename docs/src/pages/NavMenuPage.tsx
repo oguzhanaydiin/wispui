@@ -1,4 +1,4 @@
-import { WNavMenu, type WNavItem } from "wizui"
+import { WNavMenu, type WNavItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const items: WNavItem[] = [
@@ -18,7 +18,7 @@ const withMenu: WNavItem[] = [
       { label: "Link", href: "/link" },
     ],
   },
-  { label: "GitHub", href: "https://github.com/oguzhanaydiin/wizui", target: "_blank" },
+  { label: "GitHub", href: "https://github.com/oguzhanaydiin/wispui", target: "_blank" },
 ]
 
 export function NavMenuPage() {

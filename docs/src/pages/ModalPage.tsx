@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WButton, WModal } from "wizui"
+import { WButton, WModal } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function ControlledDemo() {

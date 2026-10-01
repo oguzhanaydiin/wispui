@@ -1,4 +1,4 @@
-# wizui
+# wispui
 
 A React component library. Nuxt UI's look and API. Install the package, pass data, ship.
 
@@ -7,16 +7,16 @@ No Radix. No copy-paste. Native HTML.
 ## Install
 
 ```bash
-npm i wizui
+npm i wispui
 ```
 
 ```css
 @import "tailwindcss";
-@import "wizui/theme.css";
+@import "wispui/theme.css";
 ```
 
 ```tsx
-import { WButton } from "wizui"
+import { WButton } from "wispui"
 
 <WButton color="primary" variant="subtle" icon="plus">
   New

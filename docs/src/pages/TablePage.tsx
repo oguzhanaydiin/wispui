@@ -5,7 +5,7 @@ import {
   WDropdown,
   WTable,
   type WTableColumn,
-} from "wizui"
+} from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 type Payment = {

@@ -1,4 +1,4 @@
-import type { WNavItem } from "wizui"
+import type { WNavItem } from "wispui"
 
 export const docsNav: WNavItem[] = [
   {

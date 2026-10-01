@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WButton, WDropdown, type WDropdownItem } from "wizui"
+import { WButton, WDropdown, type WDropdownItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const grouped: WDropdownItem[][] = [
@@ -106,7 +106,7 @@ export function DropdownPage() {
         <WDropdown
           items={[
             [
-              { label: "GitHub", href: "https://github.com/oguzhanaydiin/wizui", target: "_blank", icon: "plus" },
+              { label: "GitHub", href: "https://github.com/oguzhanaydiin/wispui", target: "_blank", icon: "plus" },
               { label: "Email", href: "mailto:ada@example.com", icon: "mail" },
             ],
           ]}

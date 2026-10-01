@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { WizProvider } from "wizui"
+import { WispProvider } from "wispui"
 import { DocsLayout } from "./components/DocsLayout.tsx"
 import { HomePage } from "./pages/HomePage.tsx"
 import { AccordionPage } from "./pages/AccordionPage.tsx"
@@ -113,7 +113,7 @@ export default function App() {
   const Page = home ? HomePage : path in pages ? pages[path as keyof typeof pages] : ButtonPage
 
   return (
-    <WizProvider>
+    <WispProvider>
       {home ? (
         <Page />
       ) : (
@@ -121,6 +121,6 @@ export default function App() {
           <Page />
         </DocsLayout>
       )}
-    </WizProvider>
+    </WispProvider>
   )
 }

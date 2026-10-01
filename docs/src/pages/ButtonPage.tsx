@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WButton } from "wizui"
+import { WButton } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function Star() {

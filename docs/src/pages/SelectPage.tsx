@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WFormField, WSelect, type WSelectItem } from "wizui"
+import { WFormField, WSelect, type WSelectItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const statuses: WSelectItem[] = [

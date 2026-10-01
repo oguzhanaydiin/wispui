@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WAlert, WBadge, WButton } from "wizui"
+import { WAlert, WBadge, WButton } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 function CloseDemo() {

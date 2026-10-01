@@ -1,4 +1,4 @@
-import { WAvatar, WButton, WTooltip } from "wizui"
+import { WAvatar, WButton, WTooltip } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const placements = ["top", "right", "bottom", "left"] as const

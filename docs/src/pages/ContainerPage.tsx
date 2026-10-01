@@ -1,4 +1,4 @@
-import { WContainer } from "wizui"
+import { WContainer } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 export function ContainerPage() {
