@@ -1,8 +1,29 @@
 {
   "name": "wispui",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "The React component library. Native HTML. Fully styled, easy to use, and highly editable.",
   "type": "module",
+  "license": "MIT",
+  "author": "oguzhanaydiin",
+  "homepage": "https://github.com/oguzhanaydiin/wispui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oguzhanaydiin/wispui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oguzhanaydiin/wispui/issues"
+  },
+  "keywords": [
+    "react",
+    "react-19",
+    "tailwind",
+    "tailwindcss",
+    "components",
+    "ui",
+    "native-html"
+  ],
   "sideEffects": ["**/*.css"],
+  "files": ["src", "README.md", "LICENSE"],
   "exports": {
     ".": "./src/index.ts",
     "./theme.css": "./src/theme/theme.css"
