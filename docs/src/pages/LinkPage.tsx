@@ -1,4 +1,5 @@
 import { WLink } from "wispui"
+import { withBase } from "../base"
 import { Code, Section } from "../components/DocsLayout"
 
 export function LinkPage() {
@@ -17,8 +18,8 @@ export function LinkPage() {
 
       <Section title="Usage" description="href is the destination. External links get rel when they open in a new tab.">
         <div className="flex flex-wrap gap-4">
-          <WLink href="/">Button</WLink>
-          <WLink href="/badge">Badge</WLink>
+          <WLink href={withBase("/")}>Button</WLink>
+          <WLink href={withBase("/badge")}>Badge</WLink>
           <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">
             GitHub
           </WLink>
@@ -27,27 +28,27 @@ export function LinkPage() {
 
       <Section title="Active" description="active forces it. exact only matches the full path. / is always exact.">
         <div className="flex flex-wrap gap-4">
-          <WLink href="/link">This page</WLink>
-          <WLink href="/" active>
+          <WLink href={withBase("/link")}>This page</WLink>
+          <WLink href={withBase("/")} active>
             Forced active
           </WLink>
-          <WLink href="/badge">Not current</WLink>
+          <WLink href={withBase("/badge")}>Not current</WLink>
         </div>
       </Section>
 
       <Section title="Raw" description="raw drops the default color. Use className, activeClass, inactiveClass.">
         <div className="flex flex-wrap gap-4">
-          <WLink raw href="/link" activeClass="font-semibold text-neutral-900" inactiveClass="text-neutral-400">
+          <WLink raw href={withBase("/link")} activeClass="font-semibold text-neutral-900" inactiveClass="text-neutral-400">
             This page
           </WLink>
-          <WLink raw href="/" activeClass="font-semibold text-neutral-900" inactiveClass="text-neutral-400">
+          <WLink raw href={withBase("/")} activeClass="font-semibold text-neutral-900" inactiveClass="text-neutral-400">
             Button
           </WLink>
         </div>
       </Section>
 
       <Section title="Disabled" description="Renders a span. No href, no click.">
-        <WLink href="/" disabled>
+        <WLink href={withBase("/")} disabled>
           Can't click
         </WLink>
       </Section>

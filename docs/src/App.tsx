@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { WispProvider } from "wispui"
+import { pathOf } from "./base.ts"
 import { DocsLayout } from "./components/DocsLayout.tsx"
 import { HomePage } from "./pages/HomePage.tsx"
 import { AccordionPage } from "./pages/AccordionPage.tsx"
@@ -77,10 +78,6 @@ const pages = {
   "/toast": ToastPage,
   "/tooltip": TooltipPage,
 } as const
-
-function pathOf() {
-  return window.location.pathname.replace(/\/$/, "") || "/"
-}
 
 function scrollToHash() {
   const id = window.location.hash.slice(1)

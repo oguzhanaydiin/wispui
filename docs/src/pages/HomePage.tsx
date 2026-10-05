@@ -20,6 +20,7 @@ import {
   WTooltip,
   type WNavItem,
 } from "wispui"
+import { withBase } from "../base"
 import { docsNav } from "../nav"
 
 const theme = `@import "tailwindcss";
@@ -37,7 +38,12 @@ function navLinks(items: WNavItem[]): { href: string; label: string }[] {
       out.push(...navLinks(item.children))
       continue
     }
-    if (typeof item.href === "string" && typeof item.label === "string" && item.href !== "/") {
+    if (
+      typeof item.href === "string" &&
+      typeof item.label === "string" &&
+      item.href !== "/" &&
+      item.href !== withBase("/")
+    ) {
       out.push({ href: item.href, label: item.label })
     }
   }
@@ -163,14 +169,14 @@ export function HomePage() {
     <div className="min-h-dvh bg-white text-neutral-900">
       <header className="sticky top-0 z-20 border-b border-neutral-200/80 bg-white/90 backdrop-blur">
         <WContainer className="flex h-14 items-center justify-between">
-          <WLink raw href="/" className="text-sm font-semibold tracking-tight">
+          <WLink raw exact href={withBase("/")} className="text-sm font-semibold tracking-tight">
             wispui
           </WLink>
           <div className="flex items-center gap-3">
             <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">
               GitHub
             </WLink>
-            <WLink raw href="/button" className={primaryCta}>
+            <WLink raw href={withBase("/button")} className={primaryCta}>
               Docs
             </WLink>
           </div>
@@ -236,7 +242,7 @@ export function HomePage() {
         <WContainer className="space-y-4 pb-20">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="text-xl font-semibold tracking-tight">{components.length} components</h2>
-            <WLink href="/button">Open the docs</WLink>
+            <WLink href={withBase("/button")}>Open the docs</WLink>
           </div>
           <div className="flex flex-wrap gap-2">
             {components.map((item) => (

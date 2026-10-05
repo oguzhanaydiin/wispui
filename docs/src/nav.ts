@@ -1,6 +1,16 @@
 import type { WNavItem } from "wispui"
+import { withBase } from "./base"
 
-export const docsNav: WNavItem[] = [
+function withDocsBase(items: WNavItem[]): WNavItem[] {
+  return items.map((item) => ({
+    ...item,
+    href: item.href ? withBase(item.href) : item.href,
+    exact: item.href === "/" ? true : item.exact,
+    children: item.children ? withDocsBase(item.children) : item.children,
+  }))
+}
+
+export const docsNav: WNavItem[] = withDocsBase([
   {
     type: "label",
     label: "Getting started",
@@ -72,4 +82,4 @@ export const docsNav: WNavItem[] = [
       { href: "/accordion", label: "Accordion" },
     ],
   },
-]
+])
