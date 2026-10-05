@@ -33,6 +33,8 @@ Button · Badge · Alert · Avatar · Card · Input · Textarea · Checkbox · S
 
 ## Docs
 
+https://oguzhanaydiin.github.io/wispui/
+
 ```bash
 npm run dev
 ```
