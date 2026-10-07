@@ -1,11 +1,11 @@
 {
   "name": "wispui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The React component library. Native HTML. Fully styled, easy to use, and highly editable.",
   "type": "module",
   "license": "MIT",
   "author": "oguzhanaydiin",
-  "homepage": "https://github.com/oguzhanaydiin/wispui#readme",
+  "homepage": "https://oguzhanaydiin.github.io/wispui",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oguzhanaydiin/wispui.git"

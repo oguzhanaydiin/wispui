@@ -27,6 +27,8 @@ import { WButton, WispProvider } from "wispui"
 
 Wrap the app in `WispProvider` for toast, confirm, and overlay. Same props everywhere: `color`, `variant`, `size`, `icon`, `className`.
 
+Docs: https://oguzhanaydiin.github.io/wispui
+
 Peer: React 19, Tailwind CSS v4.
 
 ## License
