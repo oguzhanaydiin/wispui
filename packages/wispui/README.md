@@ -1,6 +1,6 @@
 # wispui
 
-React 19 component library for Tailwind CSS v4. Native HTML. Fully styled, easy to use, and highly editable.
+React 19 UI library for Tailwind CSS v4. Native HTML components, fully styled, easy to use, and highly editable.
 
 No Radix. No copy-paste kit. You install the package, pass data, and ship. Same props on every component: `color`, `variant`, `size`, `icon`, `className`.
 
