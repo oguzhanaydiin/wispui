@@ -61,9 +61,16 @@ export {
 } from "./components/WTable"
 export { WTabs, type WTabsItem, type WTabsProps, type WTabsVariant } from "./components/WTabs"
 export { WTextarea, type WTextareaProps, type WTextareaResize } from "./components/WTextarea"
+export { WThemeButton, type WThemeButtonProps } from "./components/WThemeButton"
 export { WToast, type WToastProps } from "./components/WToast"
 export { WTooltip, type WTooltipProps } from "./components/WTooltip"
 export { WispProvider, type WispProviderProps } from "./overlay/WispProvider"
+export {
+  useTheme,
+  WThemeProvider,
+  type ThemeMode,
+  type WThemeProviderProps,
+} from "./theme/WThemeProvider"
 export { confirm, type ConfirmOptions } from "./overlay/confirm"
 export {
   createOverlay,
