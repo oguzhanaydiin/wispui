@@ -33,7 +33,7 @@ Wrap the app in `WispProvider` for toast, confirm, modal-from-code, and other ov
 
 ## Components
 
-Button, Button Group, Badge, Chip, Alert, Avatar, Avatar Group, Card, Container, Separator, Skeleton, Progress, Kbd, Code Block, Input, Textarea, Form Field, Checkbox, Switch, Radio Group, Select, Slider, Modal, Slideover, Popover, Tooltip, Dropdown, Toast, Link, Nav, Nav Menu, Breadcrumb, Tabs, Pagination, Table, Accordion.
+Button, Button Group, Badge, Chip, Alert, Avatar, Avatar Group, Card, Container, Separator, Skeleton, Progress, Kbd, Code Block, Input, Textarea, Form Field, Checkbox, Switch, Radio Group, Select, Slider, Modal, Slideover, Popover, Tooltip, Dropdown, Toast, Link, Nav, Nav Menu, Breadcrumb, Tabs, Pagination, Table, Accordion, Theme.
 
 ## License
 

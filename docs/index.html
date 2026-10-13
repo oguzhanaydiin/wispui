@@ -9,6 +9,16 @@
       content="wispui. The React component library. Native HTML. Fully styled, easy to use, and highly editable."
     />
     <title>wispui</title>
+    <script>
+      try {
+        var mode = localStorage.getItem("wispui-theme")
+        var dark =
+          mode === "dark" ||
+          (mode !== "light" && matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.classList.toggle("dark", dark)
+        document.documentElement.style.colorScheme = dark ? "dark" : "light"
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

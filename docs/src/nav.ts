@@ -14,7 +14,10 @@ export const docsNav: WNavItem[] = withDocsBase([
   {
     type: "label",
     label: "Getting started",
-    children: [{ href: "/", label: "Overview" }],
+    children: [
+      { href: "/", label: "Overview" },
+      { href: "/theme", label: "Theme" },
+    ],
   },
   {
     type: "label",
