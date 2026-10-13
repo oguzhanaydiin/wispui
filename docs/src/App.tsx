@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { WispProvider } from "wispui"
+import { WispProvider, WThemeProvider } from "wispui"
 import { pathOf } from "./base.ts"
 import { DocsLayout } from "./components/DocsLayout.tsx"
 import { HomePage } from "./pages/HomePage.tsx"
@@ -36,6 +36,7 @@ import { SlideoverPage } from "./pages/SlideoverPage.tsx"
 import { SwitchPage } from "./pages/SwitchPage.tsx"
 import { TablePage } from "./pages/TablePage.tsx"
 import { TabsPage } from "./pages/TabsPage.tsx"
+import { ThemePage } from "./pages/ThemePage.tsx"
 import { TextareaPage } from "./pages/TextareaPage.tsx"
 import { ToastPage } from "./pages/ToastPage.tsx"
 import { TooltipPage } from "./pages/TooltipPage.tsx"
@@ -72,6 +73,7 @@ const pages = {
   "/slideover": SlideoverPage,
   "/table": TablePage,
   "/tabs": TabsPage,
+  "/theme": ThemePage,
   "/pagination": PaginationPage,
   "/popover": PopoverPage,
   "/progress": ProgressPage,
@@ -110,14 +112,16 @@ export default function App() {
   const Page = home ? HomePage : path in pages ? pages[path as keyof typeof pages] : ButtonPage
 
   return (
-    <WispProvider>
-      {home ? (
-        <Page />
-      ) : (
-        <DocsLayout>
+    <WThemeProvider>
+      <WispProvider>
+        {home ? (
           <Page />
-        </DocsLayout>
-      )}
-    </WispProvider>
+        ) : (
+          <DocsLayout>
+            <Page />
+          </DocsLayout>
+        )}
+      </WispProvider>
+    </WThemeProvider>
   )
 }

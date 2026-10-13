@@ -17,6 +17,7 @@ import {
   WSelect,
   WSwitch,
   WTabs,
+  WThemeButton,
   WTooltip,
   type WNavItem,
 } from "wispui"
@@ -29,7 +30,7 @@ const theme = `@import "tailwindcss";
 const cta =
   "inline-flex items-center justify-center rounded-md px-3.5 py-2 text-sm font-medium"
 const primaryCta = `${cta} bg-primary-500 text-white hover:bg-primary-600`
-const outlineCta = `${cta} text-neutral-800 ring-1 ring-inset ring-neutral-300 hover:bg-neutral-50`
+const outlineCta = `${cta} text-neutral-800 ring-1 ring-inset ring-neutral-300 hover:bg-neutral-50 dark:text-neutral-200 dark:ring-neutral-700 dark:hover:bg-neutral-800`
 
 function navLinks(items: WNavItem[]): { href: string; label: string }[] {
   const out: { href: string; label: string }[] = []
@@ -52,8 +53,8 @@ function navLinks(items: WNavItem[]): { href: string; label: string }[] {
 
 function Preview() {
   return (
-    <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
-      <div className="flex items-center gap-2 border-b border-neutral-100 bg-neutral-50/80 px-4 py-2.5">
+    <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+      <div className="flex items-center gap-2 border-b border-neutral-100 bg-neutral-50/80 px-4 py-2.5 dark:border-neutral-800 dark:bg-neutral-900/80">
         <span className="size-2.5 rounded-full bg-neutral-200" />
         <span className="size-2.5 rounded-full bg-neutral-200" />
         <span className="size-2.5 rounded-full bg-neutral-200" />
@@ -64,7 +65,7 @@ function Preview() {
         </span>
       </div>
       <div className="grid md:grid-cols-2">
-        <div className="flex flex-col gap-3 border-b border-neutral-100 p-5 md:border-r">
+        <div className="flex flex-col gap-3 border-b border-neutral-100 p-5 md:border-r dark:border-neutral-800">
           <p className="text-xs font-medium text-neutral-400">Actions</p>
           <div className="flex flex-wrap items-center gap-2">
             <WButton color="primary" variant="subtle" icon="plus">
@@ -116,12 +117,12 @@ function Preview() {
             </WTooltip>
           </div>
         </div>
-        <div className="flex flex-col gap-3 border-b border-neutral-100 p-5">
+        <div className="flex flex-col gap-3 border-b border-neutral-100 p-5 dark:border-neutral-800">
           <p className="text-xs font-medium text-neutral-400">Feedback</p>
           <WAlert color="success" variant="subtle" title="Saved" description="Your changes are in." />
           <WProgress value={72} />
         </div>
-        <div className="flex flex-col gap-3 border-b border-neutral-100 p-5 md:border-r md:border-b-0">
+        <div className="flex flex-col gap-3 border-b border-neutral-100 p-5 md:border-r md:border-b-0 dark:border-neutral-800">
           <p className="text-xs font-medium text-neutral-400">Form</p>
           <WInput icon="search" placeholder="Search" />
           <WSelect
@@ -166,13 +167,14 @@ export function HomePage() {
   const components = navLinks(docsNav)
 
   return (
-    <div className="min-h-dvh bg-white text-neutral-900">
-      <header className="sticky top-0 z-20 border-b border-neutral-200/80 bg-white/90 backdrop-blur">
+    <div className="min-h-dvh bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+      <header className="sticky top-0 z-20 border-b border-neutral-200/80 bg-white/90 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
         <WContainer className="flex h-14 items-center justify-between">
-          <WLink raw exact href={withBase("/")} className="text-sm font-semibold tracking-tight">
+          <WLink raw exact href={withBase("/")} className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
             wispui
           </WLink>
           <div className="flex items-center gap-3">
+            <WThemeButton />
             <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">
               GitHub
             </WLink>
@@ -184,12 +186,12 @@ export function HomePage() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden border-b border-neutral-200">
+        <section className="relative overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--color-primary-100),transparent_58%)]" />
           <WContainer className="relative py-16 lg:py-24">
             <div className="mx-auto max-w-2xl space-y-5 text-center">
               <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">wispui</h1>
-              <p className="text-xl font-medium text-neutral-800 sm:text-2xl">
+              <p className="text-xl font-medium text-neutral-800 sm:text-2xl dark:text-neutral-200">
                 The React component library.
               </p>
               <p className="text-lg text-neutral-500">
@@ -250,7 +252,7 @@ export function HomePage() {
                 key={item.href}
                 raw
                 href={item.href}
-                className="rounded-md bg-neutral-100 px-2.5 py-1 text-sm text-neutral-700 hover:bg-neutral-200"
+                className="rounded-md bg-neutral-100 px-2.5 py-1 text-sm text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
               >
                 {item.label}
               </WLink>
@@ -259,7 +261,7 @@ export function HomePage() {
         </WContainer>
       </main>
 
-      <footer className="border-t border-neutral-200">
+      <footer className="border-t border-neutral-200 dark:border-neutral-800">
         <WContainer className="flex h-14 items-center justify-between text-sm text-neutral-500">
           <span>MIT</span>
           <WLink href="https://github.com/oguzhanaydiin/wispui" target="_blank">

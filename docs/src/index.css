@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "wispui/theme.css";
+
+.dark p code,
+.dark li code {
+  color: var(--color-neutral-200);
+}
