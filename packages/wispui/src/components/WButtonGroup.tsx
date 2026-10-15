@@ -56,8 +56,11 @@ export function WButtonGroup({
     <div
       role="group"
       className={cx(
-        "isolate",
-        vertical ? "inline-flex flex-col -space-y-px" : "inline-flex -space-x-px",
+        "isolate inline-flex max-w-full",
+        "[&>*]:ring-1 [&>*]:ring-inset [&>*]:ring-neutral-300 dark:[&>*]:ring-neutral-700",
+        vertical
+          ? "flex-col -space-y-px"
+          : "w-fit -space-x-px max-sm:w-full max-sm:flex-col max-sm:space-x-0 max-sm:-space-y-px",
         ui?.base,
         className,
         classAlias,
@@ -73,11 +76,12 @@ export function WButtonGroup({
           className: cx(
             el.props.className,
             el.props.class,
-            "focus-visible:z-10",
+            "min-w-0 max-w-full focus-visible:z-10",
             "rounded-none",
-            first && (vertical ? "rounded-t-md" : "rounded-l-md"),
-            last && (vertical ? "rounded-b-md" : "rounded-r-md"),
+            !vertical && "max-sm:w-full",
             first && last && "rounded-md",
+            first && !last && (vertical ? "rounded-t-md" : "rounded-l-md max-sm:rounded-none max-sm:rounded-t-md"),
+            last && !first && (vertical ? "rounded-b-md" : "rounded-r-md max-sm:rounded-none max-sm:rounded-b-md"),
           ),
         })
       })}
