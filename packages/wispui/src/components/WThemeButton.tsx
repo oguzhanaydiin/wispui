@@ -1,5 +1,6 @@
-import { useTheme, type ThemeMode } from "../theme/WThemeProvider"
 import type { IconName } from "../icons"
+import { useTheme, type ThemeMode } from "../theme/WThemeProvider"
+import { cx } from "../utils/cx"
 import { WButton, type WButtonProps } from "./WButton"
 
 const nextMode: Record<ThemeMode, ThemeMode> = {
@@ -26,6 +27,7 @@ export function WThemeButton({
   color = "neutral",
   variant = "ghost",
   size = "md",
+  className,
   "aria-label": ariaLabel,
   ...props
 }: WThemeButtonProps) {
@@ -39,6 +41,7 @@ export function WThemeButton({
       variant={variant}
       size={size}
       icon={icons[mode]}
+      className={cx("shrink-0 max-sm:min-h-10 max-sm:min-w-10", className)}
       aria-label={ariaLabel ?? `Theme: ${labels[mode]}. Switch to ${labels[next]}`}
       onClick={() => setMode(next)}
     />
