@@ -10,7 +10,7 @@ const solid: Record<Color, string> = {
   info: "bg-info-500 text-white hover:bg-info-600 disabled:bg-info-500",
   warning: "bg-warning-500 text-white hover:bg-warning-600 disabled:bg-warning-500",
   error: "bg-error-500 text-white hover:bg-error-600 disabled:bg-error-500",
-  neutral: "bg-neutral-900 text-white hover:bg-neutral-800 disabled:bg-neutral-900 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100",
+  neutral: "bg-neutral-900 text-white hover:bg-neutral-800 disabled:bg-neutral-900 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100 dark:disabled:bg-white",
 }
 
 const subtle: Record<Color, string> = {
@@ -122,7 +122,7 @@ export function WButton({
       disabled={disabled || loading}
       aria-busy={loading || undefined}
       className={cx(
-        "inline-flex items-center justify-center font-medium transition-colors select-none",
+        "inline-flex max-w-full min-w-0 items-center justify-center font-medium transition-colors select-none",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500",
         "disabled:opacity-60 disabled:cursor-not-allowed",
         sizes[size].base,
@@ -134,7 +134,7 @@ export function WButton({
       {...props}
     >
       {leadingNode}
-      {children ? <span className={ui?.label}>{children}</span> : null}
+      {children ? <span className={cx("min-w-0 truncate", ui?.label)}>{children}</span> : null}
       {trailingNode}
     </button>
   )

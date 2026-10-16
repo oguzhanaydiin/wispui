@@ -9,18 +9,19 @@ export function ButtonGroupPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Button Group</h1>
         <p className="text-neutral-500">
           Joins Button (or Input) into one control. Shared{" "}
-          <code className="text-neutral-800">size</code>, connected borders, first and last keep the radius.
+          <code className="text-neutral-800">size</code> and one outline, first and last keep the radius.
+          On a narrow screen a horizontal group stacks and fills the width.
         </p>
       </header>
 
       <Code>{`<WButtonGroup>
-  <WButton color="neutral" variant="subtle">Edit</WButton>
+  <WButton color="neutral" variant="outline">Edit</WButton>
   <WButton color="neutral" variant="outline" icon="chevron" aria-label="More" />
 </WButtonGroup>`}</Code>
 
       <Section title="Usage">
         <WButtonGroup>
-          <WButton color="neutral" variant="subtle">
+          <WButton color="neutral" variant="outline">
             Edit
           </WButton>
           <WButton color="neutral" variant="outline" icon="chevron" aria-label="More" />
@@ -30,13 +31,13 @@ export function ButtonGroupPage() {
       <Section title="Size" description="size on the group flows into children that don't set their own.">
         <div className="flex flex-wrap items-center gap-3">
           <WButtonGroup size="sm">
-            <WButton color="neutral" variant="subtle">
+            <WButton color="neutral" variant="outline">
               Small
             </WButton>
             <WButton color="neutral" variant="outline" icon="chevron" aria-label="More" />
           </WButtonGroup>
           <WButtonGroup size="lg">
-            <WButton color="neutral" variant="subtle">
+            <WButton color="neutral" variant="outline">
               Large
             </WButton>
             <WButton color="neutral" variant="outline" icon="chevron" aria-label="More" />
@@ -46,7 +47,7 @@ export function ButtonGroupPage() {
 
       <Section title="Orientation" description="horizontal is the default. vertical stacks them.">
         <WButtonGroup orientation="vertical">
-          <WButton color="neutral" variant="subtle">
+          <WButton color="neutral" variant="outline">
             Submit
           </WButton>
           <WButton color="neutral" variant="outline">
@@ -58,7 +59,7 @@ export function ButtonGroupPage() {
       <Section title="With input">
         <WButtonGroup>
           <WInput placeholder="Enter token" className="w-48" />
-          <WButton color="neutral" variant="subtle" icon="copy" aria-label="Copy" />
+          <WButton color="neutral" variant="outline" icon="copy" aria-label="Copy" />
         </WButtonGroup>
       </Section>
 
