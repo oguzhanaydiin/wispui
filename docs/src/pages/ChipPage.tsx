@@ -12,7 +12,8 @@ export function ChipPage() {
         <p className="text-neutral-500">
           A status dot on a child. Wrap a Button or Avatar. Not a Badge.{" "}
           <code className="text-neutral-800">text</code> puts a count in the dot.{" "}
-          <code className="text-neutral-800">inset</code> keeps it on rounded faces.
+          <code className="text-neutral-800">inset</code> keeps it on rounded faces. On a small screen the
+          dot stays inside the corner.
         </p>
       </header>
 

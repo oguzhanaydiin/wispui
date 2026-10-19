@@ -5,13 +5,13 @@ import { cx } from "../utils/cx"
 type Position = "top-right" | "top-left" | "bottom-right" | "bottom-left"
 
 const fill: Record<Color, string> = {
-  primary: "bg-primary-500",
-  secondary: "bg-secondary-500",
-  success: "bg-success-500",
-  info: "bg-info-500",
-  warning: "bg-warning-500",
-  error: "bg-error-500",
-  neutral: "bg-neutral-900 dark:bg-white",
+  primary: "bg-primary-500 text-white",
+  secondary: "bg-secondary-500 text-white",
+  success: "bg-success-500 text-white",
+  info: "bg-info-500 text-white",
+  warning: "bg-warning-500 text-white",
+  error: "bg-error-500 text-white",
+  neutral: "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900",
 }
 
 const sizes: Record<Size, string> = {
@@ -66,13 +66,14 @@ export function WChip({
   const dot = (
     <span
       className={cx(
-        "flex items-center justify-center rounded-full font-medium whitespace-nowrap text-white ring-2 ring-white dark:ring-neutral-900",
+        "flex max-w-full min-w-0 items-center justify-center truncate rounded-full font-medium ring-2 ring-white dark:ring-neutral-900",
         fill[color],
         sizes[size],
         text != null && text !== "" && "px-1",
         !standalone && "absolute",
         !standalone && corners[position],
         !standalone && !inset && offset[position],
+        !standalone && !inset && "max-sm:translate-none",
         ui?.base,
       )}
     >
@@ -82,14 +83,14 @@ export function WChip({
 
   if (standalone) {
     return (
-      <div className={cx("relative inline-flex shrink-0 items-center justify-center", ui?.root, className, classAlias)} {...props}>
+      <div className={cx("relative inline-flex max-w-full min-w-0 shrink-0 items-center justify-center", ui?.root, className, classAlias)} {...props}>
         {show ? dot : null}
       </div>
     )
   }
 
   return (
-    <div className={cx("relative inline-flex shrink-0 items-center justify-center", ui?.root, className, classAlias)} {...props}>
+    <div className={cx("relative inline-flex max-w-full min-w-0 shrink-0 items-center justify-center", ui?.root, className, classAlias)} {...props}>
       {children}
       {show ? dot : null}
     </div>
