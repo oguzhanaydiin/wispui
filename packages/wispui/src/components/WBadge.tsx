@@ -56,7 +56,7 @@ export function WBadge({
   return (
     <span
       className={cx(
-        "inline-flex items-center font-medium select-none",
+        "inline-flex max-w-full min-w-0 items-center font-medium select-none",
         sizes[size].base,
         variants[variant][color],
         ui?.base,
@@ -66,7 +66,9 @@ export function WBadge({
       {...props}
     >
       {renderIcon(leading ?? icon, cx(iconClass, ui?.leadingIcon))}
-      {children != null && children !== false ? <span className={ui?.label}>{children}</span> : null}
+      {children != null && children !== false ? (
+        <span className={cx("min-w-0 truncate", ui?.label)}>{children}</span>
+      ) : null}
       {renderIcon(trailing ?? trailingIcon, cx(iconClass, ui?.trailingIcon))}
     </span>
   )

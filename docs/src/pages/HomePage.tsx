@@ -167,8 +167,8 @@ export function HomePage() {
   const components = navLinks(docsNav)
 
   return (
-    <div className="min-h-dvh bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-      <header className="sticky top-0 z-20 border-b border-neutral-200/80 bg-white/90 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
+    <div className="min-h-dvh bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
+      <header className="sticky top-0 z-20 border-b border-neutral-200/80 bg-white/90 backdrop-blur dark:border-neutral-800 dark:bg-neutral-900/90">
         <WContainer className="flex h-14 items-center justify-between">
           <WLink raw exact href={withBase("/")} className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
             wispui
@@ -187,7 +187,7 @@ export function HomePage() {
 
       <main>
         <section className="relative overflow-hidden border-b border-neutral-200 dark:border-neutral-800">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--color-primary-100),transparent_58%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--color-primary-100),transparent_58%)] dark:bg-[radial-gradient(ellipse_at_top,color-mix(in_oklab,var(--color-primary-400)_16%,transparent),transparent_38%)]" />
           <WContainer className="relative py-16 lg:py-24">
             <div className="mx-auto max-w-2xl space-y-5 text-center">
               <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">wispui</h1>

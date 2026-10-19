@@ -19,7 +19,7 @@ export function BadgePage() {
         <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">Components</p>
         <h1 className="text-3xl font-semibold tracking-tight">Badge</h1>
         <p className="text-neutral-500">
-          A short status chip. Same props as Button:{" "}
+          A short status chip. A long label stays on one line. Same props as Button:{" "}
           <code className="text-neutral-800">color</code>, <code className="text-neutral-800">variant</code>,{" "}
           <code className="text-neutral-800">size</code>, <code className="text-neutral-800">icon</code>,{" "}
           <code className="text-neutral-800">className</code>.
