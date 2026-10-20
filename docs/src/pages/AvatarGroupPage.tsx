@@ -11,7 +11,7 @@ export function AvatarGroupPage() {
           Stacks Avatar with a ring overlap.{" "}
           <code className="text-neutral-800">size</code> and{" "}
           <code className="text-neutral-800">color</code> flow into children.{" "}
-          <code className="text-neutral-800">max</code> shows a +N fallback.
+          <code className="text-neutral-800">max</code> shows a +N fallback. On a small screen the row wraps inside the parent.
         </p>
       </header>
 
