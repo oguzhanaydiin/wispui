@@ -72,7 +72,7 @@ export function AvatarPage() {
         </div>
       </Section>
 
-      <Section title="Customize" description="className (or class) overrides only what you write.">
+      <Section title="Customize" description="className (or class) overrides only what you write. A ring offset matches the surface.">
         <div className="flex flex-wrap items-center gap-3">
           <WAvatar alt="Ada Lovelace" className="rounded-md" />
           <WAvatar alt="Ada Lovelace" className="size-16 text-xl" />

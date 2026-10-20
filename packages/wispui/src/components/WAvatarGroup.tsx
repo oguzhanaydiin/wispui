@@ -12,11 +12,11 @@ import { cx } from "../utils/cx"
 import { WAvatar } from "./WAvatar"
 
 const overlap: Record<Size, string> = {
-  xs: "-me-1",
-  sm: "-me-1.5",
-  md: "-me-1.5",
-  lg: "-me-2",
-  xl: "-me-2",
+  xs: "sm:-me-1",
+  sm: "sm:-me-1.5",
+  md: "sm:-me-1.5",
+  lg: "sm:-me-2",
+  xl: "sm:-me-2",
 }
 
 function flatten(nodes: ReactNode): ReactElement[] {
@@ -74,20 +74,28 @@ export function WAvatarGroup({
   const total = visible.length + (extra > 0 ? 1 : 0)
   const ring = (index: number) =>
     cx(
-      "relative inline-flex rounded-full ring-2 ring-white dark:ring-neutral-900",
+      "relative inline-flex rounded-full ring-2 ring-neutral-50 dark:ring-neutral-900",
       index < total - 1 && overlap[size],
       ui?.base,
     )
 
   return (
-    <div className={cx("inline-flex flex-row items-center", ui?.root, className, classAlias)} {...props}>
+    <div
+      className={cx(
+        "isolate inline-flex max-w-full min-w-0 flex-wrap items-center gap-1 sm:flex-nowrap sm:gap-0",
+        ui?.root,
+        className,
+        classAlias,
+      )}
+      {...props}
+    >
       {visible.map((child, index) => (
-        <span key={index} className={ring(index)}>
+        <span key={index} className={ring(index)} style={{ zIndex: total - index }}>
           {withAvatarProps(child, size, color)}
         </span>
       ))}
       {extra > 0 ? (
-        <span className={ring(visible.length)}>
+        <span className={ring(visible.length)} style={{ zIndex: 0 }}>
           <WAvatar size={size} color={color} text={`+${extra}`} />
         </span>
       ) : null}
