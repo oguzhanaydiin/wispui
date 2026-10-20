@@ -37,7 +37,8 @@ function group(core: string) {
   if (/^text-(left|center|right|justify)$/.test(core)) return "text-align"
   if (core.startsWith("text-")) return "text-color"
   if (core.startsWith("ring-inset")) return "ring-inset"
-  if (core.startsWith("ring-offset")) return "ring-offset"
+  if (/^ring-offset-(0|1|2|4|8)$/.test(core)) return "ring-offset-width"
+  if (core.startsWith("ring-offset")) return "ring-offset-color"
   if (/^ring-(0|1|2|4|8)$/.test(core)) return "ring-width"
   if (core.startsWith("ring-")) return "ring-color"
   if (core === "divide-y" || core === "divide-x" || core === "divide-none") return core

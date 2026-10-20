@@ -93,7 +93,7 @@ export function WAvatar({
     <span
       {...props}
       className={cx(
-        "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full align-middle font-medium select-none",
+        "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full align-middle font-medium select-none ring-offset-white dark:ring-offset-neutral-900",
         sizes[size].root,
         subtle[color],
         ui?.root,
@@ -125,7 +125,7 @@ export function WAvatar({
       ) : icon != null && icon !== false ? (
         renderIcon(icon, cx("shrink-0", sizes[size].icon, ui?.icon))
       ) : (
-        <span className={cx("truncate px-0.5", ui?.fallback)}>{fallback || null}</span>
+        <span className={cx("max-w-full min-w-0 truncate px-0.5", ui?.fallback)}>{fallback || null}</span>
       )}
     </span>
   )
