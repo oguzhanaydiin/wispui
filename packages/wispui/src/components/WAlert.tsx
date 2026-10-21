@@ -114,16 +114,16 @@ export function WAlert({
             ) : (
               <>
                 {title != null ? (
-                  <div className={cx("text-sm font-semibold", ui?.title)}>{title}</div>
+                  <div className={cx("text-sm font-semibold break-words", ui?.title)}>{title}</div>
                 ) : null}
                 {description != null ? (
-                  <p className={cx("text-sm opacity-80", ui?.description)}>{description}</p>
+                  <p className={cx("text-sm break-words opacity-80", ui?.description)}>{description}</p>
                 ) : null}
               </>
             )}
           </div>
         ) : null}
-        {bodyNode != null ? <div className={cx("text-sm opacity-80", ui?.body)}>{bodyNode}</div> : null}
+        {bodyNode != null ? <div className={cx("text-sm break-words opacity-80", ui?.body)}>{bodyNode}</div> : null}
         {footerNode != null ? (
           <div className={cx("flex flex-wrap gap-2 pt-2", ui?.footer)}>{footerNode}</div>
         ) : null}
@@ -135,7 +135,7 @@ export function WAlert({
           size="sm"
           icon="x"
           aria-label="Close"
-          className={cx("-mr-1.5 -mt-1.5 text-current hover:bg-black/10", ui?.close)}
+          className={cx("-mr-1.5 -mt-1.5 shrink-0 text-current hover:bg-current/10", ui?.close)}
           onClick={api.close}
         />
       ) : (
