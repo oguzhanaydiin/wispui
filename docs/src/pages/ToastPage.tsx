@@ -32,7 +32,7 @@ export function ToastPage() {
           <code className="text-neutral-800">toast.add()</code> and{" "}
           <code className="text-neutral-800">await confirm()</code> work from anywhere. Confirm is not a
           component you put in JSX. It is a function that mounts{" "}
-          <code className="text-neutral-800">WModal</code> inside the provider.
+          <code className="text-neutral-800">WModal</code> inside the provider. The title stays readable on a dark surface, and a long line wraps.
         </p>
       </header>
 

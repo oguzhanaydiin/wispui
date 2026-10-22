@@ -37,7 +37,7 @@ export function AlertPage() {
           <code className="text-neutral-800">title</code> and{" "}
           <code className="text-neutral-800">description</code> are the defaults.{" "}
           <code className="text-neutral-800">header</code>, <code className="text-neutral-800">body</code>,{" "}
-          <code className="text-neutral-800">footer</code> replace them. Same as Vue slots.
+          <code className="text-neutral-800">footer</code> replace them. Same as Vue slots. A long line wraps, and the close hover follows the text.
         </p>
       </header>
 
@@ -103,7 +103,7 @@ export function AlertPage() {
         <WAlert
           title="Custom panel"
           description="Dark alert, same layout."
-          className="bg-neutral-950 text-white"
+          className="bg-neutral-900 text-white dark:bg-neutral-800"
           ui={{ description: "text-neutral-400", leadingIcon: "text-white" }}
         />
       </Section>

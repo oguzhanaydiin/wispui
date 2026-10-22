@@ -88,9 +88,13 @@ export function WToast({
     >
       {renderIcon(resolvedIcon, cx("mt-0.5 size-5 shrink-0", iconColor[color], ui?.icon))}
       <div className="min-w-0 flex-1 space-y-1">
-        {title != null ? <div className={cx("text-sm font-medium", ui?.title)}>{title}</div> : null}
+        {title != null ? (
+          <div className={cx("text-sm font-medium break-words text-neutral-900 dark:text-neutral-100", ui?.title)}>
+            {title}
+          </div>
+        ) : null}
         {description != null ? (
-          <p className={cx("text-sm text-neutral-500", ui?.description)}>{description}</p>
+          <p className={cx("text-sm break-words text-neutral-500 dark:text-neutral-400", ui?.description)}>{description}</p>
         ) : null}
         {actions?.length ? (
           <div className={cx("flex flex-wrap gap-1.5 pt-1.5", ui?.actions)}>
