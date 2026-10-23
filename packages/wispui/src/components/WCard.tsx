@@ -2,12 +2,12 @@ import type { HTMLAttributes, ReactNode } from "react"
 import { cx } from "../utils/cx"
 
 const variants = {
-  solid: "bg-neutral-950 text-white divide-y divide-neutral-800",
+  solid: "bg-neutral-900 text-white divide-y divide-neutral-800 dark:bg-white dark:text-neutral-900 dark:divide-neutral-200",
   outline:
-    "bg-white ring-1 ring-neutral-200 divide-y divide-neutral-200 dark:bg-neutral-900 dark:ring-neutral-800 dark:divide-neutral-800",
+    "bg-white text-neutral-900 ring-1 ring-neutral-200 divide-y divide-neutral-200 dark:bg-neutral-900 dark:text-neutral-100 dark:ring-neutral-800 dark:divide-neutral-800",
   subtle:
-    "bg-neutral-50 ring-1 ring-neutral-200 divide-y divide-neutral-200 dark:bg-neutral-800/50 dark:ring-neutral-800 dark:divide-neutral-800",
-  ghost: "divide-y divide-neutral-200 dark:divide-neutral-800",
+    "bg-neutral-50 text-neutral-900 ring-1 ring-neutral-200 divide-y divide-neutral-200 dark:bg-neutral-800/50 dark:text-neutral-100 dark:ring-neutral-800 dark:divide-neutral-800",
+  ghost: "text-neutral-900 divide-y divide-neutral-200 dark:text-neutral-100 dark:divide-neutral-800",
 } as const
 
 export type WCardVariant = keyof typeof variants
@@ -52,7 +52,7 @@ export function WCard({
   return (
     <div
       className={cx(
-        "overflow-hidden rounded-lg",
+        "max-w-full min-w-0 overflow-hidden rounded-lg",
         variants[variant],
         ui?.base,
         className,
@@ -61,19 +61,19 @@ export function WCard({
       {...props}
     >
       {headerNode != null || defaultHeader ? (
-        <div className={cx("px-4 py-3", ui?.header)}>
+        <div className={cx("min-w-0 px-4 py-3", ui?.header)}>
           {headerNode != null ? (
             headerNode
           ) : (
             <div className="space-y-1">
               {title != null ? (
-                <div className={cx("text-base font-semibold", ui?.title)}>{title}</div>
+                <div className={cx("text-base font-semibold break-words", ui?.title)}>{title}</div>
               ) : null}
               {description != null ? (
                 <p
                   className={cx(
-                    "text-sm text-neutral-500",
-                    variant === "solid" && "text-neutral-400",
+                    "text-sm break-words text-neutral-500 dark:text-neutral-400",
+                    variant === "solid" && "text-neutral-400 dark:text-neutral-500",
                     ui?.description,
                   )}
                 >
@@ -84,7 +84,7 @@ export function WCard({
           )}
         </div>
       ) : null}
-      {bodyNode != null ? <div className={cx("px-4 py-3", ui?.body)}>{bodyNode}</div> : null}
+      {bodyNode != null ? <div className={cx("min-w-0 px-4 py-3 break-words", ui?.body)}>{bodyNode}</div> : null}
       {footerNode != null ? (
         <div className={cx("flex flex-wrap items-center gap-2 px-4 py-3", ui?.footer)}>{footerNode}</div>
       ) : null}

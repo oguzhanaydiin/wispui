@@ -13,7 +13,7 @@ export function CardPage() {
           <code className="text-neutral-800">body</code>,{" "}
           <code className="text-neutral-800">footer</code>. Same slots as Modal.{" "}
           <code className="text-neutral-800">title</code> and{" "}
-          <code className="text-neutral-800">description</code> fill the header. Children are the body.
+          <code className="text-neutral-800">description</code> fill the header. Children are the body. Solid inverts with the theme. A long title wraps.
         </p>
       </header>
 
@@ -27,7 +27,7 @@ export function CardPage() {
 
       <Section title="Usage" description="title and description are the default header. Children go in the body.">
         <WCard title="Team" description="People in this workspace.">
-          <p className="text-sm text-neutral-600">Ada, Lin, and three more.</p>
+          <p className="text-sm text-neutral-600 dark:text-neutral-300">Ada, Lin, and three more.</p>
         </WCard>
       </Section>
 
@@ -41,7 +41,7 @@ export function CardPage() {
               </WBadge>
             </div>
           }
-          body={<p className="text-sm text-neutral-600">Ada wants to join the workspace.</p>}
+          body={<p className="text-sm text-neutral-600 dark:text-neutral-300">Ada wants to join the workspace.</p>}
           footer={
             <>
               <WButton size="sm" color="neutral" variant="ghost">
@@ -66,30 +66,30 @@ export function CardPage() {
             </>
           }
         >
-          <p className="text-sm text-neutral-600">The project and all of its data will be removed.</p>
+          <p className="text-sm text-neutral-600 dark:text-neutral-300">The project and all of its data will be removed.</p>
         </WCard>
       </Section>
 
       <Section title="Variants" description="Default is outline. solid, subtle, ghost too.">
         <div className="grid gap-3 sm:grid-cols-2">
           <WCard variant="outline" title="Outline" description="The default. Ring and dividers.">
-            <p className="text-sm text-neutral-600">White panel.</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300">Filled panel.</p>
           </WCard>
           <WCard variant="subtle" title="Subtle" description="Muted fill, same ring.">
-            <p className="text-sm text-neutral-600">Softer background.</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300">Softer background.</p>
           </WCard>
           <WCard variant="solid" title="Solid" description="Inverted panel.">
-            <p className="text-sm text-neutral-300">Dark fill.</p>
+            <p className="text-sm text-neutral-300 dark:text-neutral-600">Opposite of the page.</p>
           </WCard>
           <WCard variant="ghost" title="Ghost" description="No chrome. Dividers stay.">
-            <p className="text-sm text-neutral-600">Use inside another surface.</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300">Use inside another surface.</p>
           </WCard>
         </div>
       </Section>
 
       <Section title="Body only" description="Skip title and footer. The card is just the panel.">
         <WCard>
-          <p className="text-sm text-neutral-600">A short note with no header.</p>
+          <p className="text-sm text-neutral-600 dark:text-neutral-300">A short note with no header.</p>
         </WCard>
       </Section>
 
@@ -100,7 +100,7 @@ export function CardPage() {
         <WCard
           title="Custom panel"
           description="Dark card, same layout."
-          className="bg-neutral-950 text-white ring-neutral-800 divide-neutral-800"
+          className="bg-neutral-900 text-white ring-neutral-800 divide-neutral-800 dark:bg-neutral-800"
           ui={{ description: "text-neutral-400", footer: "justify-end" }}
           footer={<WButton variant="subtle">Open</WButton>}
         >
