@@ -9,7 +9,7 @@ export function ContainerPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Container</h1>
         <p className="text-neutral-500">
           Centers content and caps the width. Native <code className="text-neutral-800">div</code>,{" "}
-          <code className="text-neutral-800">max-w-7xl</code>, horizontal padding.
+          <code className="text-neutral-800">max-w-7xl</code>, horizontal padding. On a small screen the padding steps down, and the box can shrink inside a flex parent.
         </p>
       </header>
 
@@ -18,14 +18,14 @@ export function ContainerPage() {
 </WContainer>`}</Code>
 
       <Section title="Usage" description="The inner box is just to show the width. Drop it in a page.">
-        <WContainer className="rounded-md bg-white py-8 ring-1 ring-neutral-200">
-          <p className="text-sm text-neutral-600">mx-auto max-w-7xl px-4 sm:px-6 lg:px-8</p>
+        <WContainer className="rounded-md bg-white py-8 ring-1 ring-neutral-200 dark:bg-neutral-900 dark:ring-neutral-800">
+          <p className="text-sm text-neutral-600 dark:text-neutral-300">mx-auto max-w-7xl px-4 sm:px-6 lg:px-8</p>
         </WContainer>
       </Section>
 
       <Section title="Customize" description="className (or class) overrides only what you write.">
-        <WContainer className="max-w-md rounded-md bg-white py-6 text-center ring-1 ring-neutral-200">
-          <p className="text-sm text-neutral-600">max-w-md</p>
+        <WContainer className="max-w-md rounded-md bg-white py-6 text-center ring-1 ring-neutral-200 dark:bg-neutral-900 dark:ring-neutral-800">
+          <p className="text-sm text-neutral-600 dark:text-neutral-300">max-w-md</p>
         </WContainer>
       </Section>
 

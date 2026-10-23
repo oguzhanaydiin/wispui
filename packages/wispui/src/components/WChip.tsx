@@ -66,7 +66,7 @@ export function WChip({
   const dot = (
     <span
       className={cx(
-        "flex max-w-full min-w-0 items-center justify-center truncate rounded-full font-medium ring-2 ring-white dark:ring-neutral-900",
+        "flex max-w-full min-w-0 items-center justify-center truncate rounded-full font-medium ring-2 ring-white dark:ring-neutral-800",
         fill[color],
         sizes[size],
         text != null && text !== "" && "px-1",

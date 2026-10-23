@@ -74,7 +74,7 @@ export function WAvatarGroup({
   const total = visible.length + (extra > 0 ? 1 : 0)
   const ring = (index: number) =>
     cx(
-      "relative inline-flex rounded-full ring-2 ring-neutral-50 dark:ring-neutral-900",
+      "relative inline-flex rounded-full ring-2 ring-neutral-50 dark:ring-neutral-800",
       index < total - 1 && overlap[size],
       ui?.base,
     )

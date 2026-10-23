@@ -16,7 +16,7 @@ export function WContainer({
 }: WContainerProps) {
   return (
     <div
-      className={cx("mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8", ui?.base, className, classAlias)}
+      className={cx("mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-8", ui?.base, className, classAlias)}
       {...props}
     >
       {children}

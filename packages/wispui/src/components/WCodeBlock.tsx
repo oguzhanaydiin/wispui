@@ -15,8 +15,8 @@ const sizes: Record<Size, { code: string; header: string; highlight: string }> =
 
 const variants = {
   subtle: {
-    root: "border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900",
-    header: "border-neutral-200 text-neutral-500 dark:border-neutral-800 dark:text-neutral-400",
+    root: "border-neutral-200 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800",
+    header: "border-neutral-200 text-neutral-500 dark:border-neutral-700 dark:text-neutral-400",
     language: "text-neutral-400 dark:text-neutral-500",
     code: "text-neutral-500 dark:text-neutral-400",
     copy: "text-neutral-400 hover:bg-neutral-200 hover:text-neutral-700 dark:hover:bg-white/10 dark:hover:text-neutral-100",
