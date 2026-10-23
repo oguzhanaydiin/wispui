@@ -40,7 +40,7 @@ export function Section({
         <h2 className="text-base font-semibold">{title}</h2>
         {description ? <p className="text-sm text-neutral-500">{description}</p> : null}
       </div>
-      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-800 dark:bg-neutral-900">{children}</div>
+      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800">{children}</div>
     </section>
   )
 }

@@ -53,8 +53,8 @@ function navLinks(items: WNavItem[]): { href: string; label: string }[] {
 
 function Preview() {
   return (
-    <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
-      <div className="flex items-center gap-2 border-b border-neutral-100 bg-neutral-50/80 px-4 py-2.5 dark:border-neutral-800 dark:bg-neutral-900/80">
+    <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+      <div className="flex items-center gap-2 border-b border-neutral-100 bg-neutral-50/80 px-4 py-2.5 dark:border-neutral-700 dark:bg-neutral-800">
         <span className="size-2.5 rounded-full bg-neutral-200" />
         <span className="size-2.5 rounded-full bg-neutral-200" />
         <span className="size-2.5 rounded-full bg-neutral-200" />
