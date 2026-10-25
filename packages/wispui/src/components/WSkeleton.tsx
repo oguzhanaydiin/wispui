@@ -17,7 +17,7 @@ export function WSkeleton({
   return (
     <div
       className={cx(
-        "animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-800",
+        "max-w-full min-w-0 animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-700",
         ui?.base,
         className,
         classAlias,
