@@ -13,14 +13,14 @@ export function SeparatorPage() {
           A line between content.{" "}
           <code className="text-neutral-800">label</code> and{" "}
           <code className="text-neutral-800">icon</code> sit on the line.{" "}
-          <code className="text-neutral-800">orientation</code> flips it. Native divider, not a Radix primitive.
+          <code className="text-neutral-800">orientation</code> flips it. Native divider, not a Radix primitive. A long label wraps. On a small screen the vertical row wraps.
         </p>
       </header>
 
       <Code>{`<WSeparator label="or" />`}</Code>
 
       <Section title="Usage" description="A full-width line. Add className for spacing.">
-        <div className="space-y-3 text-sm text-neutral-600">
+        <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
           <p>Invite by email.</p>
           <WSeparator />
           <p>Or share a link instead.</p>
@@ -32,6 +32,7 @@ export function SeparatorPage() {
           <WSeparator label="or" />
           <WSeparator label="start" position="start" />
           <WSeparator label="end" position="end" />
+          <WSeparator label="A longer label that stays inside the parent" />
         </div>
       </Section>
 
@@ -43,7 +44,7 @@ export function SeparatorPage() {
       </Section>
 
       <Section title="Orientation" description="vertical needs a height. Pass className.">
-        <div className="flex items-center gap-4 text-sm text-neutral-600">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-300">
           <span>Inbox</span>
           <WSeparator orientation="vertical" className="h-8" />
           <span>Sent</span>
@@ -85,22 +86,22 @@ export function SeparatorPage() {
         <WSeparator
           label="custom"
           className="py-2"
-          ui={{ label: "text-neutral-900 uppercase tracking-wide text-xs", border: "border-neutral-900" }}
+          ui={{ label: "text-neutral-900 uppercase tracking-wide text-xs dark:text-neutral-100", border: "border-neutral-900 dark:border-neutral-200" }}
         />
       </Section>
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["color", "primary | secondary | success | info | warning | error | neutral", "neutral"],
                 ["size", "xs | sm | md | lg | xl", "xs"],
@@ -116,8 +117,8 @@ export function SeparatorPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
