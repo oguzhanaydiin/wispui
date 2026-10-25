@@ -55,6 +55,10 @@ function group(core: string) {
   if (core.startsWith("underline-offset")) return "underline-offset"
   if (core.startsWith("outline-")) return "outline"
   if (core.startsWith("size-")) return "size"
+  if (core.startsWith("max-w-")) return "max-w"
+  if (core.startsWith("max-h-")) return "max-h"
+  if (core.startsWith("min-w-")) return "min-w"
+  if (core.startsWith("min-h-")) return "min-h"
   if (core.startsWith("w-")) return "w"
   if (core.startsWith("h-")) return "h"
   return core

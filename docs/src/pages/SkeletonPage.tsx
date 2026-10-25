@@ -9,7 +9,7 @@ export function SkeletonPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Skeleton</h1>
         <p className="text-neutral-500">
           A pulse placeholder while content loads. Size and shape come from{" "}
-          <code className="text-neutral-800">className</code>.
+          <code className="text-neutral-800">className</code>. On a small screen the lines stay inside the parent.
         </p>
       </header>
 
@@ -17,11 +17,11 @@ export function SkeletonPage() {
 <WSkeleton className="h-4 w-48" />`}</Code>
 
       <Section title="Usage" description="A circle and two lines. Same pattern as a loading row.">
-        <div className="flex items-center gap-4">
-          <WSkeleton className="size-12 rounded-full" />
-          <div className="grid gap-2">
-            <WSkeleton className="h-4 w-[250px]" />
-            <WSkeleton className="h-4 w-[200px]" />
+        <div className="flex min-w-0 items-center gap-4">
+          <WSkeleton className="size-12 shrink-0 rounded-full" />
+          <div className="grid min-w-0 flex-1 gap-2">
+            <WSkeleton className="h-4 w-full max-w-[250px]" />
+            <WSkeleton className="h-4 w-full max-w-[200px]" />
           </div>
         </div>
       </Section>
@@ -30,7 +30,7 @@ export function SkeletonPage() {
         <WCard>
           <div className="flex items-center gap-4">
             <WSkeleton className="size-10 rounded-full" />
-            <div className="grid flex-1 gap-2">
+            <div className="grid min-w-0 flex-1 gap-2">
               <WSkeleton className="h-4 w-1/2" />
               <WSkeleton className="h-3 w-1/3" />
             </div>
@@ -55,21 +55,21 @@ export function SkeletonPage() {
         title="Customize"
         description="className (or class) is the size. ui.base if you only want to touch the pulse."
       >
-        <WSkeleton className="h-4 w-56 bg-primary-200" />
+        <WSkeleton className="h-4 w-full max-w-56 bg-primary-200 dark:bg-primary-800" />
       </Section>
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["className / class", "string", "size and shape"],
                 ["ui", "{ base }", "-"],
@@ -77,8 +77,8 @@ export function SkeletonPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>

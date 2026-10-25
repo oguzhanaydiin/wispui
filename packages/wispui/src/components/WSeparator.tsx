@@ -10,7 +10,7 @@ const colors: Record<Color, string> = {
   info: "border-info-500",
   warning: "border-warning-500",
   error: "border-error-500",
-  neutral: "border-neutral-200 dark:border-neutral-800",
+  neutral: "border-neutral-200 dark:border-neutral-700",
 }
 
 const types = {
@@ -92,8 +92,8 @@ export function WSeparator({
   const hasIcon = icon != null && icon !== false
   const content = children ?? (
     <>
-      {renderIcon(icon, cx("shrink-0 text-neutral-400", iconSize[size], ui?.icon))}
-      {label ? <span className={cx("text-sm font-medium text-neutral-500", ui?.label)}>{label}</span> : null}
+      {renderIcon(icon, cx("shrink-0 text-neutral-400 dark:text-neutral-300", iconSize[size], ui?.icon))}
+      {label ? <span className={cx("min-w-0 break-words text-sm font-medium text-neutral-500 dark:text-neutral-400", ui?.label)}>{label}</span> : null}
     </>
   )
   const hasContent = children != null || hasIcon || Boolean(label)
@@ -118,7 +118,7 @@ export function WSeparator({
     return (
       <hr
         className={cx(
-          "m-0 block w-full border-x-0 border-b-0",
+          "m-0 block w-full min-w-0 max-w-full border-x-0 border-b-0",
           horizontalSize[size],
           types[type],
           colors[color],
@@ -139,8 +139,8 @@ export function WSeparator({
   return (
     <div
       className={cx(
-        "flex items-center self-stretch text-center",
-        horizontal ? "w-full flex-row" : "h-full flex-col",
+        "flex max-w-full min-w-0 items-center self-stretch text-center",
+        horizontal ? "w-full flex-row" : "h-full max-h-full min-h-0 flex-col",
         ui?.base,
         className,
         classAlias,
@@ -155,7 +155,7 @@ export function WSeparator({
           {end ? line("before") : null}
           <div
             className={cx(
-              "flex shrink-0 items-center gap-2 font-medium",
+              "flex min-w-0 max-w-full items-center gap-2 font-medium",
               horizontal
                 ? position === "start"
                   ? "me-3"
