@@ -26,7 +26,7 @@ export function CodeBlockPage() {
           <code className="text-neutral-800">js</code> /{" "}
           <code className="text-neutral-800">jsx</code> /{" "}
           <code className="text-neutral-800">ts</code> /{" "}
-          <code className="text-neutral-800">tsx</code> color tags, props, strings, keywords.
+          <code className="text-neutral-800">tsx</code> color tags, props, strings, keywords. A long line scrolls inside the block.
         </p>
       </header>
 
@@ -35,7 +35,10 @@ export function CodeBlockPage() {
 </WCodeBlock>`}</Code>
 
       <Section title="Usage" description="Pass code or a string child. language labels the header.">
-        <WCodeBlock language="tsx">{jsxSample}</WCodeBlock>
+        <div className="grid min-w-0 gap-4">
+          <WCodeBlock language="tsx">{jsxSample}</WCodeBlock>
+          <WCodeBlock language="ts" filename="long.ts" code={'const label = "a-long-token-that-should-scroll-inside-the-block-instead-of-widening-the-page"'} />
+        </div>
       </Section>
 
       <Section title="TypeScript" description="ts / js color keywords, strings, types. No tags.">
@@ -69,7 +72,7 @@ export function CodeBlockPage() {
       </Section>
 
       <Section title="Sizes" description="xs, sm, md, lg, xl. Default is md.">
-        <div className="grid gap-4">
+        <div className="grid min-w-0 gap-4">
           <WCodeBlock size="xs" language="ts" code="const size = 'xs'" />
           <WCodeBlock size="sm" language="ts" code="const size = 'sm'" />
           <WCodeBlock language="ts" code="const size = 'md'" />
@@ -79,16 +82,16 @@ export function CodeBlockPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["code / children", "string", "-"],
                 ["language", "string", "js | jsx | ts | tsx color tokens"],
@@ -104,8 +107,8 @@ export function CodeBlockPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>

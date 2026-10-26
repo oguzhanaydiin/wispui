@@ -15,8 +15,8 @@ const sizes: Record<Size, { code: string; header: string; highlight: string }> =
 
 const variants = {
   subtle: {
-    root: "border-neutral-200 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800",
-    header: "border-neutral-200 text-neutral-500 dark:border-neutral-700 dark:text-neutral-400",
+    root: "border-neutral-200 bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800",
+    header: "border-neutral-200 text-neutral-500 dark:border-neutral-600 dark:text-neutral-400",
     language: "text-neutral-400 dark:text-neutral-500",
     code: "text-neutral-500 dark:text-neutral-400",
     copy: "text-neutral-400 hover:bg-neutral-200 hover:text-neutral-700 dark:hover:bg-white/10 dark:hover:text-neutral-100",
@@ -26,7 +26,7 @@ const variants = {
       attr: "text-violet-600 dark:text-violet-400",
       string: "text-green-600 dark:text-green-400",
       keyword: "text-blue-700 dark:text-blue-400",
-      comment: "text-neutral-400",
+      comment: "text-neutral-400 dark:text-neutral-500",
       number: "text-neutral-500 dark:text-neutral-400",
       punct: "text-blue-600 dark:text-blue-400",
       type: "text-neutral-500 dark:text-neutral-400",
@@ -37,7 +37,7 @@ const variants = {
   solid: {
     root: "border-neutral-800 bg-neutral-950",
     header: "border-neutral-800 text-neutral-400",
-    language: "text-neutral-600",
+    language: "text-neutral-400",
     code: "text-neutral-400",
     copy: "text-neutral-400 hover:bg-white/10 hover:text-neutral-100",
     copyCopied: "text-success-400 hover:bg-white/10",
@@ -192,7 +192,7 @@ export function WCodeBlock({
   return (
     <div
       className={cx(
-        "relative overflow-hidden rounded-lg border",
+        "relative max-w-full min-w-0 overflow-hidden rounded-lg border",
         look.root,
         ui?.root,
         className,
@@ -203,7 +203,7 @@ export function WCodeBlock({
       {showHeader ? (
         <div
           className={cx(
-            "flex items-center gap-1.5 border-b",
+            "flex min-w-0 items-center gap-1.5 border-b",
             look.header,
             sizes[size].header,
             ui?.header,
@@ -219,7 +219,7 @@ export function WCodeBlock({
       ) : null}
       <pre
         className={cx(
-          "overflow-x-auto font-mono",
+          "max-w-full min-w-0 overflow-x-auto font-mono",
           look.code,
           sizes[size].code,
           !showHeader && copy && "pr-12",
