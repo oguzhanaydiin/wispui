@@ -19,7 +19,7 @@ export function KbdPage() {
           <code className="text-neutral-800">color</code>,{" "}
           <code className="text-neutral-800">variant</code>,{" "}
           <code className="text-neutral-800">size</code>,{" "}
-          <code className="text-neutral-800">className</code>.
+          <code className="text-neutral-800">className</code>. A long label stays on one line.
         </p>
       </header>
 
@@ -32,6 +32,7 @@ export function KbdPage() {
           <WKbd value="K" />
           <span className="mx-2 text-sm text-neutral-400">or</span>
           <WKbd>/</WKbd>
+          <WKbd>A much longer keyboard label that stays on one line</WKbd>
         </div>
       </Section>
 
@@ -98,16 +99,16 @@ export function KbdPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["value", "string", "-"],
                 ["color", "primary | secondary | success | info | warning | error | neutral", "neutral"],
@@ -118,8 +119,8 @@ export function KbdPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
