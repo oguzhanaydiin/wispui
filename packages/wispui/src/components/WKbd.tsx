@@ -72,7 +72,7 @@ export function WKbd({
   return (
     <kbd
       className={cx(
-        "inline-flex items-center justify-center rounded-sm font-sans font-medium uppercase leading-none select-none",
+        "inline-flex max-w-full min-w-0 items-center justify-center rounded-sm font-sans font-medium uppercase leading-none select-none",
         sizes[size],
         variants[variant][color],
         ui?.base,
@@ -81,7 +81,7 @@ export function WKbd({
       )}
       {...props}
     >
-      {children ?? getKbdKey(value)}
+      <span className="min-w-0 truncate">{children ?? getKbdKey(value)}</span>
     </kbd>
   )
 }
