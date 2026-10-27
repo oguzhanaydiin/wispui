@@ -15,32 +15,32 @@ export function TextareaPage() {
           <code className="text-neutral-800">variant</code>,{" "}
           <code className="text-neutral-800">size</code>,{" "}
           <code className="text-neutral-800">icon</code>,{" "}
-          <code className="text-neutral-800">className</code>. Default variant is outline.
+          <code className="text-neutral-800">className</code>. Default variant is outline. On a small screen the field shrinks, and a long word stays inside.
         </p>
       </header>
 
       <Code>{`<WTextarea placeholder="Write a note..." rows={4} />`}</Code>
 
       <Section title="Usage">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WTextarea placeholder="Write a note..." />
         </div>
       </Section>
 
       <Section title="Rows" description="rows sets the starting height. Default is 3. Drag the corner to grow.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WTextarea rows={6} placeholder="Six rows." />
         </div>
       </Section>
 
       <Section title="Fixed" description="resize=none. Height stays at rows. No drag from the corner.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WTextarea resize="none" rows={4} placeholder="Fixed height." />
         </div>
       </Section>
 
       <Section title="Variants" description="Default is outline. subtle, ghost, solid too.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           <WTextarea variant="outline" placeholder="Outline" rows={2} />
           <WTextarea variant="subtle" placeholder="Subtle" rows={2} />
           <WTextarea variant="ghost" placeholder="Ghost" rows={2} />
@@ -48,7 +48,7 @@ export function TextareaPage() {
       </Section>
 
       <Section title="Colors" description="Focus ring follows color. highlight paints the ring without focus.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           {colors.map((color) => (
             <WTextarea key={color} color={color} highlight placeholder={color} rows={2} />
           ))}
@@ -56,13 +56,13 @@ export function TextareaPage() {
       </Section>
 
       <Section title="Disabled">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WTextarea disabled placeholder="Can't type" />
         </div>
       </Section>
 
       <Section title="With FormField">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Bio" hint="Optional" help="A short line about you.">
             <WTextarea placeholder="I build things." />
           </WFormField>
@@ -71,16 +71,16 @@ export function TextareaPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["color", "primary | secondary | success | info | warning | error | neutral", "primary"],
                 ["variant", "solid | subtle | outline | ghost | link", "outline"],
@@ -97,8 +97,8 @@ export function TextareaPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
