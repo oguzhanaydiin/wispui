@@ -28,7 +28,7 @@ export function FormFieldPage() {
           Label, hint, help, error around any control. Wraps{" "}
           <code className="text-neutral-800">WInput</code> without extra ids. The field owns{" "}
           <code className="text-neutral-800">htmlFor</code>.{" "}
-          <code className="text-neutral-800">error</code> paints the input error and replaces help.
+          <code className="text-neutral-800">error</code> paints the input error and replaces help. In dark mode the label stays light. On a small screen a horizontal field stacks, and a long label wraps.
         </p>
       </header>
 
@@ -37,7 +37,7 @@ export function FormFieldPage() {
 </WFormField>`}</Code>
 
       <Section title="Usage" description="label + children. The input gets the id.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Email">
             <WInput icon="mail" placeholder="ada@example.com" />
           </WFormField>
@@ -45,7 +45,7 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="Required" description="Asterisk on the label. required goes to the input too.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Email" required>
             <WInput placeholder="ada@example.com" />
           </WFormField>
@@ -53,7 +53,7 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="Hint" description="Sits on the right of the label.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Email" hint="Optional">
             <WInput placeholder="ada@example.com" />
           </WFormField>
@@ -61,10 +61,10 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="Description" description="Under the label, before the control.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField
             label="Email"
-            description="We'll never share this with anyone."
+            description="We'll never share this with anyone, even if the sentence runs long."
           >
             <WInput placeholder="ada@example.com" />
           </WFormField>
@@ -72,7 +72,7 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="Help" description="Under the control. error replaces it.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Email" help="Use the address you signed up with.">
             <WInput placeholder="ada@example.com" />
           </WFormField>
@@ -80,7 +80,7 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="Error" description="String shows the message. The input turns error without passing color.">
-        <div className="max-w-sm space-y-4">
+        <div className="w-full min-w-0 max-w-sm space-y-4">
           <WFormField label="Email" error="Please enter a valid email.">
             <WInput icon="mail" placeholder="ada@example.com" />
           </WFormField>
@@ -89,7 +89,7 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="Sizes" description="xs, sm, md, lg, xl. Size goes to the input.">
-        <div className="max-w-sm space-y-3">
+        <div className="w-full min-w-0 max-w-sm space-y-3">
           {(["xs", "sm", "md", "lg", "xl"] as const).map((size) => (
             <WFormField key={size} size={size} label={size} hint="Optional">
               <WInput placeholder="Email" />
@@ -98,8 +98,8 @@ export function FormFieldPage() {
         </div>
       </Section>
 
-      <Section title="Horizontal" description="orientation=horizontal. Label on the left.">
-        <div className="max-w-lg">
+      <Section title="Horizontal" description="orientation=horizontal. Label on the left. On a small screen it stacks.">
+        <div className="w-full min-w-0 max-w-lg">
           <WFormField
             orientation="horizontal"
             label="Email"
@@ -111,7 +111,7 @@ export function FormFieldPage() {
       </Section>
 
       <Section title="With a button" description="The field wraps whatever you put in children.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Invite" hint="One address">
             <div className="flex gap-2">
               <div className="min-w-0 flex-1">
@@ -125,16 +125,16 @@ export function FormFieldPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["label", "ReactNode", "-"],
                 ["description", "ReactNode", "-"],
@@ -150,8 +150,8 @@ export function FormFieldPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>

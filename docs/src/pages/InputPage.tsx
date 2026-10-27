@@ -56,20 +56,20 @@ export function InputPage() {
           <code className="text-neutral-800">variant</code>,{" "}
           <code className="text-neutral-800">size</code>,{" "}
           <code className="text-neutral-800">icon</code>,{" "}
-          <code className="text-neutral-800">className</code>. Default variant is outline.
+          <code className="text-neutral-800">className</code>. Default variant is outline. On a small screen the field shrinks inside the parent.
         </p>
       </header>
 
       <Code>{`<WInput icon="mail" placeholder="ada@example.com" />`}</Code>
 
       <Section title="Usage">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WInput placeholder="Search..." />
         </div>
       </Section>
 
       <Section title="Variants" description="Default is outline. subtle, ghost, solid, link too.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           <WInput variant="outline" placeholder="Outline" />
           <WInput variant="subtle" placeholder="Subtle" />
           <WInput variant="ghost" placeholder="Ghost" />
@@ -78,7 +78,7 @@ export function InputPage() {
       </Section>
 
       <Section title="Colors" description="Focus ring follows color. highlight paints the ring without focus.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           {colors.map((color) => (
             <WInput key={color} color={color} highlight placeholder={color} />
           ))}
@@ -86,7 +86,7 @@ export function InputPage() {
       </Section>
 
       <Section title="Sizes" description="xs, sm, md, lg, xl.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           <WInput size="xs" placeholder="Extra small" />
           <WInput size="sm" placeholder="Small" />
           <WInput placeholder="Medium" />
@@ -96,7 +96,7 @@ export function InputPage() {
       </Section>
 
       <Section title="Icons" description="icon is leading. trailingIcon or trailing for the right side.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           <WInput icon="search" placeholder="Search" />
           <WInput icon="mail" placeholder="Email" />
           <WInput trailingIcon="user" placeholder="Username" />
@@ -104,26 +104,26 @@ export function InputPage() {
       </Section>
 
       <Section title="Trailing" description="Pass a node: a clear button, a password toggle.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           <ClearDemo />
           <PasswordDemo />
         </div>
       </Section>
 
       <Section title="Loading" description="Replaces the leading icon.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WInput loading icon="search" placeholder="Searching..." />
         </div>
       </Section>
 
       <Section title="Disabled">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WInput disabled placeholder="Can't type" />
         </div>
       </Section>
 
       <Section title="File" description="type=file. Native picker, same chrome.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WInput type="file" />
         </div>
       </Section>
@@ -132,28 +132,28 @@ export function InputPage() {
         title="Customize"
         description="className (or class) overrides the field. ui.leading / ui.trailing for slots."
       >
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WInput
             icon="search"
             placeholder="Custom"
-            className="bg-blue-100 ring-blue-300"
-            ui={{ leadingIcon: "text-blue-700" }}
+            className="bg-blue-100 ring-blue-300 dark:bg-blue-950 dark:ring-blue-800"
+            ui={{ leadingIcon: "text-blue-700 dark:text-blue-300" }}
           />
         </div>
       </Section>
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["color", "primary | secondary | success | info | warning | error | neutral", "primary"],
                 ["variant", "solid | subtle | outline | ghost | link", "outline"],
@@ -170,8 +170,8 @@ export function InputPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>

@@ -117,7 +117,7 @@ export function WTextarea({
   const inputName = name ?? field?.name
   const inputRequired = required ?? field?.required
   const pad = sizes[resolvedSize]
-  const iconClass = cx("shrink-0 text-neutral-400", pad.icon)
+  const iconClass = cx("shrink-0 text-neutral-400 dark:text-neutral-500", pad.icon)
 
   const leadingNode = loading
     ? loadingIcon
@@ -129,7 +129,7 @@ export function WTextarea({
   return (
     <div
       className={cx(
-        "inline-flex w-full items-start transition-colors",
+        "inline-flex w-full min-w-0 max-w-full items-start transition-colors",
         "focus-within:ring-2",
         "has-disabled:opacity-60",
         pad.base,
@@ -151,7 +151,7 @@ export function WTextarea({
         aria-invalid={field?.error || undefined}
         aria-describedby={field?.describedBy}
         className={cx(
-          "min-h-16 min-w-0 flex-1 appearance-none border-0 bg-transparent p-0 outline-none",
+          "min-h-16 min-w-0 max-w-full flex-1 appearance-none break-words border-0 bg-transparent p-0 outline-none",
           resizeClass[resize],
           "placeholder:text-neutral-400 disabled:cursor-not-allowed",
           ui?.base,
