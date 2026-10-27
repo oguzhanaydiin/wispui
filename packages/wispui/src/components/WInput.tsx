@@ -106,7 +106,7 @@ export function WInput({
   const inputName = name ?? field?.name
   const inputRequired = required ?? field?.required
   const pad = sizes[resolvedSize]
-  const iconClass = cx("shrink-0 text-neutral-400", pad.icon)
+  const iconClass = cx("shrink-0 text-neutral-400 dark:text-neutral-500", pad.icon)
 
   const leadingNode = loading
     ? loadingIcon
@@ -118,7 +118,7 @@ export function WInput({
   return (
     <div
       className={cx(
-        "inline-flex w-full items-center transition-colors",
+        "inline-flex w-full min-w-0 max-w-full items-center transition-colors",
         "focus-within:ring-2",
         "has-disabled:opacity-60",
         pad.base,
@@ -140,9 +140,10 @@ export function WInput({
         aria-invalid={field?.error || undefined}
         aria-describedby={field?.describedBy}
         className={cx(
-          "min-w-0 flex-1 appearance-none border-0 bg-transparent p-0 outline-none",
+          "min-w-0 max-w-full flex-1 appearance-none border-0 bg-transparent p-0 outline-none",
           "placeholder:text-neutral-400 disabled:cursor-not-allowed",
-          type === "file" && "file:mr-2 file:border-0 file:bg-transparent file:text-sm file:font-medium",
+          type === "file" &&
+            "file:mr-2 file:rounded-sm file:border-0 file:bg-neutral-100 file:px-2 file:py-0.5 file:text-sm file:font-medium file:text-neutral-900 dark:file:bg-neutral-800 dark:file:text-neutral-100",
           ui?.base,
         )}
         {...props}
