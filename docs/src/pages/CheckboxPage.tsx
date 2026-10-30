@@ -55,14 +55,14 @@ export function CheckboxPage() {
           Native <code className="text-neutral-800">&lt;input type=&quot;checkbox&quot;&gt;</code>. Children
           are the label. Same <code className="text-neutral-800">color</code>,{" "}
           <code className="text-neutral-800">size</code>,{" "}
-          <code className="text-neutral-800">className</code>.
+          <code className="text-neutral-800">className</code>. In dark mode the label stays light. A long label wraps.
         </p>
       </header>
 
       <Code>{`<WCheckbox>I accept the terms</WCheckbox>`}</Code>
 
       <Section title="Usage">
-        <WCheckbox defaultChecked>Subscribe to product emails</WCheckbox>
+        <WCheckbox defaultChecked>Subscribe to product emails, the weekly note, and release announcements</WCheckbox>
       </Section>
 
       <Section title="Indeterminate" description="Some children on, some off. Native mixed state: a dash, not a third value.">
@@ -104,16 +104,16 @@ export function CheckboxPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["color", "primary | secondary | success | info | warning | error | neutral", "primary"],
                 ["size", "xs | sm | md | lg | xl", "md"],
@@ -123,8 +123,8 @@ export function CheckboxPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>

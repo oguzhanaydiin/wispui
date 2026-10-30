@@ -60,7 +60,7 @@ export function WSwitch({
   return (
     <label
       className={cx(
-        "inline-flex items-center gap-2 select-none",
+        "inline-flex max-w-full min-w-0 items-center gap-2 select-none",
         disabled && "opacity-60",
         ui?.root,
         className,
@@ -83,7 +83,7 @@ export function WSwitch({
         <span
           className={cx(
             "absolute inset-0 rounded-full bg-neutral-200 ring-0 transition-colors",
-            "peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2",
+            "peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 ring-offset-white dark:ring-offset-neutral-800",
             "dark:bg-neutral-700",
             on[resolvedColor],
             ui?.track,
@@ -92,12 +92,15 @@ export function WSwitch({
         <span
           className={cx(
             "pointer-events-none absolute rounded-full bg-white shadow-sm transition-transform",
+            resolvedColor === "neutral" && "dark:peer-checked:bg-neutral-900",
             thumb[resolvedSize],
             ui?.thumb,
           )}
         />
       </span>
-      {children != null ? <span className={cx("text-sm text-neutral-800", ui?.label)}>{children}</span> : null}
+      {children != null ? (
+        <span className={cx("min-w-0 break-words text-sm text-neutral-800 dark:text-neutral-100", ui?.label)}>{children}</span>
+      ) : null}
     </label>
   )
 }
