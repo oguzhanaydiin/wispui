@@ -143,7 +143,7 @@ export function WSelect({
   const selectName = name ?? field?.name
   const selectRequired = required ?? field?.required
   const pad = sizes[resolvedSize]
-  const iconClass = cx("shrink-0 text-neutral-400", pad.icon)
+  const iconClass = cx("shrink-0 text-neutral-400 dark:text-neutral-500", pad.icon)
   const trail = trailingIcon === undefined ? "chevron" : trailingIcon
   const leadingNode = renderIcon(icon, cx(iconClass, ui?.leadingIcon))
   const trailingNode = renderIcon(trail, cx(iconClass, ui?.trailingIcon))
@@ -157,7 +157,7 @@ export function WSelect({
   const [open, setOpen] = useState(false)
   const picked = controlled ? asList(value) : uncontrolled
   const fieldClass = cx(
-    "relative inline-flex w-full items-center transition-colors",
+    "relative inline-flex w-full min-w-0 max-w-full items-center transition-colors",
     ring && "focus-within:ring-2",
     "has-disabled:opacity-60",
     pad.base,
@@ -219,7 +219,7 @@ export function WSelect({
           aria-invalid={field?.error || undefined}
           aria-describedby={field?.describedBy}
           className={cx(
-            "min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent p-0 outline-none",
+            "min-w-0 max-w-full flex-1 cursor-pointer appearance-none border-0 bg-transparent p-0 outline-none",
             "disabled:cursor-not-allowed",
             ui?.base,
           )}
@@ -302,7 +302,7 @@ export function WSelect({
   }
 
   return (
-    <div ref={wrapRef} className="relative w-full">
+    <div ref={wrapRef} className="relative w-full min-w-0 max-w-full">
       <button
         type="button"
         id={selectId}
@@ -360,8 +360,8 @@ export function WSelect({
         role="listbox"
         aria-multiselectable
         className={cx(
-          "fixed inset-auto m-0 max-h-64 overflow-auto rounded-lg bg-white p-1 shadow-lg ring-1 ring-neutral-200",
-          "dark:bg-neutral-900 dark:ring-neutral-800",
+          "fixed inset-auto m-0 max-h-64 max-w-[calc(100vw-2rem)] overflow-auto rounded-lg bg-white p-1 shadow-lg ring-1 ring-neutral-200",
+          "dark:bg-neutral-900 dark:ring-neutral-700",
           ui?.content,
         )}
         onToggle={(event: ToggleEvent<HTMLDivElement>) => {
@@ -393,7 +393,7 @@ export function WSelect({
               tabIndex={-1}
               disabled={itemDisabled}
               className={cx(
-                "flex w-full items-center text-left transition-colors select-none",
+                "flex w-full min-w-0 items-center text-left transition-colors select-none",
                 "text-neutral-800 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-500",
                 "dark:text-neutral-200 dark:hover:bg-neutral-800",
                 "disabled:cursor-not-allowed disabled:opacity-50",
