@@ -7,7 +7,7 @@ function NotificationsDemo() {
 
   return (
     <WSwitch checked={on} onChange={(event) => setOn(event.target.checked)}>
-      Email notifications {on ? "on" : "off"}
+      Email notifications for product updates, billing, and the weekly note are {on ? "on" : "off"}
     </WSwitch>
   )
 }
@@ -24,7 +24,7 @@ export function SwitchPage() {
           Native checkbox with <code className="text-neutral-800">role=&quot;switch&quot;</code>. Same{" "}
           <code className="text-neutral-800">color</code>,{" "}
           <code className="text-neutral-800">size</code>,{" "}
-          <code className="text-neutral-800">className</code>. Children are the label.
+          <code className="text-neutral-800">className</code>. Children are the label. In dark mode the label stays light, and a long label wraps.
         </p>
       </header>
 
@@ -71,16 +71,16 @@ export function SwitchPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["color", "primary | secondary | success | info | warning | error | neutral", "primary"],
                 ["size", "xs | sm | md | lg | xl", "md"],
@@ -89,8 +89,8 @@ export function SwitchPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
