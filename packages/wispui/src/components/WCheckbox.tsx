@@ -79,7 +79,7 @@ export function WCheckbox({
   return (
     <label
       className={cx(
-        "inline-flex items-center gap-2 select-none",
+        "inline-flex max-w-full min-w-0 items-center gap-2 select-none",
         disabled && "opacity-60",
         ui?.root,
         className,
@@ -102,7 +102,7 @@ export function WCheckbox({
         />
         <span
           className={cx(
-            "pointer-events-none inline-flex items-center justify-center ring-1 ring-inset ring-neutral-300 transition-colors",
+            "pointer-events-none inline-flex items-center justify-center bg-white ring-1 ring-inset ring-neutral-300 transition-colors dark:bg-neutral-900",
             "peer-focus-visible:ring-2 dark:ring-neutral-600",
             isMixed ? "[&_svg]:opacity-100" : "[&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100",
             box[resolvedSize],
@@ -120,7 +120,9 @@ export function WCheckbox({
           />
         </span>
       </span>
-      {children != null ? <span className={cx("text-sm text-neutral-800", ui?.label)}>{children}</span> : null}
+      {children != null ? (
+        <span className={cx("min-w-0 break-words text-sm text-neutral-800 dark:text-neutral-100", ui?.label)}>{children}</span>
+      ) : null}
     </label>
   )
 }
