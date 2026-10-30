@@ -84,6 +84,7 @@ export function WRadioGroup({
       aria-describedby={field?.describedBy}
       aria-required={groupRequired || undefined}
       className={cx(
+        "max-w-full min-w-0",
         orientation === "horizontal" ? "flex flex-wrap gap-4" : "flex flex-col gap-2",
         ui?.root,
         className,
@@ -96,7 +97,7 @@ export function WRadioGroup({
           <label
             key={item.value}
             className={cx(
-              "inline-flex items-start gap-2 select-none",
+              "inline-flex max-w-full min-w-0 items-start gap-2 select-none",
               (disabled || item.disabled) && "opacity-60",
               ui?.item,
             )}
@@ -117,7 +118,7 @@ export function WRadioGroup({
               />
               <span
                 className={cx(
-                  "inline-flex items-center justify-center rounded-full ring-1 ring-inset ring-neutral-300 transition-colors",
+                  "inline-flex items-center justify-center rounded-full bg-white ring-1 ring-inset ring-neutral-300 transition-colors dark:bg-neutral-900",
                   "peer-focus-visible:ring-2 dark:ring-neutral-600",
                   "[&>span]:scale-0 peer-checked:[&>span]:scale-100",
                   dot[resolvedSize],
@@ -129,9 +130,11 @@ export function WRadioGroup({
               </span>
             </span>
             <span className="min-w-0">
-              <span className={cx("block text-sm text-neutral-800", ui?.label)}>{item.label}</span>
+              <span className={cx("block break-words text-sm text-neutral-800 dark:text-neutral-100", ui?.label)}>
+                {item.label}
+              </span>
               {item.description != null ? (
-                <span className={cx("mt-0.5 block text-xs text-neutral-500", ui?.description)}>
+                <span className={cx("mt-0.5 block break-words text-xs text-neutral-500 dark:text-neutral-400", ui?.description)}>
                   {item.description}
                 </span>
               ) : null}
