@@ -13,13 +13,13 @@ function ControlledDemo() {
   const [status, setStatus] = useState("todo")
 
   return (
-    <div className="max-w-sm space-y-2">
+    <div className="w-full min-w-0 max-w-sm space-y-2">
       <WSelect
         items={statuses}
         value={status}
         onChange={(event) => setStatus(event.target.value)}
       />
-      <p className="text-sm text-neutral-500">Selected: {status}</p>
+      <p className="text-sm text-neutral-500 dark:text-neutral-400">Selected: {status}</p>
     </div>
   )
 }
@@ -28,7 +28,7 @@ function MultipleDemo() {
   const [picked, setPicked] = useState(["todo", "done"])
 
   return (
-    <div className="max-w-sm space-y-2">
+    <div className="w-full min-w-0 max-w-sm space-y-2">
       <WSelect
         multiple
         items={statuses}
@@ -37,7 +37,7 @@ function MultipleDemo() {
           setPicked([...event.currentTarget.selectedOptions].map((option) => option.value))
         }
       />
-      <p className="text-sm text-neutral-500">Selected: {picked.join(", ") || "none"}</p>
+      <p className="text-sm text-neutral-500 dark:text-neutral-400">Selected: {picked.join(", ") || "none"}</p>
     </div>
   )
 }
@@ -57,7 +57,8 @@ export function SelectPage() {
           outside to close. No search. Same{" "}
           <code className="text-neutral-800">color</code>,{" "}
           <code className="text-neutral-800">variant</code>,{" "}
-          <code className="text-neutral-800">size</code> as Input.
+          <code className="text-neutral-800">size</code> as Input. The field shrinks inside a narrow parent,
+          and a long value stays inside it.
         </p>
       </header>
 
@@ -70,13 +71,21 @@ export function SelectPage() {
 />`}</Code>
 
       <Section title="Usage" description="items can be strings or { label, value }.">
-        <div className="max-w-sm">
-          <WSelect items={["Backlog", "Todo", "In Progress", "Done"]} defaultValue="Todo" />
+        <div className="w-full min-w-0 max-w-sm">
+          <WSelect
+            items={[
+              "Backlog",
+              "Todo",
+              "In progress with a much longer status name that stays inside the field",
+              "Done",
+            ]}
+            defaultValue="In progress with a much longer status name that stays inside the field"
+          />
         </div>
       </Section>
 
       <Section title="Placeholder" description="placeholder adds a hidden empty option.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WSelect items={statuses} placeholder="Pick a status" />
         </div>
       </Section>
@@ -90,13 +99,13 @@ export function SelectPage() {
       </Section>
 
       <Section title="Icon" description="Leading icon like Input. Chevron is the trailing default.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WSelect icon="search" items={statuses} defaultValue="todo" />
         </div>
       </Section>
 
       <Section title="Variants" description="Default is outline.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           <WSelect variant="outline" items={statuses} defaultValue="todo" />
           <WSelect variant="subtle" items={statuses} defaultValue="todo" />
           <WSelect variant="ghost" items={statuses} defaultValue="todo" />
@@ -105,7 +114,7 @@ export function SelectPage() {
       </Section>
 
       <Section title="Colors" description="Focus ring follows color.">
-        <div className="max-w-sm space-y-2">
+        <div className="w-full min-w-0 max-w-sm space-y-2">
           {colors.map((color) => (
             <WSelect key={color} color={color} items={statuses} defaultValue="todo" />
           ))}
@@ -113,19 +122,19 @@ export function SelectPage() {
       </Section>
 
       <Section title="No ring" description="ring=false drops the focus ring.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WSelect ring={false} items={statuses} defaultValue="todo" />
         </div>
       </Section>
 
       <Section title="Disabled">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WSelect disabled items={statuses} defaultValue="todo" />
         </div>
       </Section>
 
       <Section title="With FormField" description="error paints the ring. The select gets the field id.">
-        <div className="max-w-sm">
+        <div className="w-full min-w-0 max-w-sm">
           <WFormField label="Status" required help="You can change this later.">
             <WSelect items={statuses} placeholder="Pick a status" />
           </WFormField>
@@ -134,16 +143,16 @@ export function SelectPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["items", "WSelectItem[]", "[]"],
                 ["placeholder", "string", "-"],
@@ -160,23 +169,23 @@ export function SelectPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Item</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["(string)", "string", "label and value"],
                 ["label", "string", "-"],
@@ -185,8 +194,8 @@ export function SelectPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>

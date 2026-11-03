@@ -3,7 +3,7 @@ import { WFormField, WRadioGroup, type WRadioItem } from "wispui"
 import { Code, Section } from "../components/DocsLayout"
 
 const plans: WRadioItem[] = [
-  { label: "Hobby", value: "hobby", description: "For side projects." },
+  { label: "Hobby plan for side projects and weekend experiments", value: "hobby", description: "For side projects that keep growing." },
   { label: "Pro", value: "pro", description: "For small teams." },
   { label: "Enterprise", value: "enterprise", description: "For companies.", disabled: true },
 ]
@@ -18,7 +18,7 @@ function ControlledDemo() {
         value={plan}
         onChange={(event) => setPlan(event.target.value)}
       />
-      <p className="text-sm text-neutral-500">Selected: {plan}</p>
+      <p className="text-sm text-neutral-500 dark:text-neutral-400">Selected: {plan}</p>
     </div>
   )
 }
@@ -34,7 +34,8 @@ export function RadioGroupPage() {
           <code className="text-neutral-800">value</code>. Same{" "}
           <code className="text-neutral-800">color</code>,{" "}
           <code className="text-neutral-800">size</code>,{" "}
-          <code className="text-neutral-800">className</code>.
+          <code className="text-neutral-800">className</code>. In dark mode the label stays light. A long
+          label wraps.
         </p>
       </header>
 
@@ -59,7 +60,7 @@ export function RadioGroupPage() {
           items={[
             { label: "Yes", value: "yes" },
             { label: "No", value: "no" },
-            { label: "Maybe", value: "maybe" },
+            { label: "Maybe later, after the weekly note", value: "maybe" },
           ]}
           defaultValue="yes"
         />
@@ -84,16 +85,16 @@ export function RadioGroupPage() {
 
       <section className="space-y-3">
         <h2 className="text-base font-semibold">API</h2>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Prop</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["items", "WRadioItem[]", "[]"],
                 ["value", "string", "-"],
@@ -106,23 +107,23 @@ export function RadioGroupPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="overflow-x-auto rounded-lg border border-neutral-200 dark:border-neutral-700">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2 font-medium">Item</th>
                 <th className="px-3 py-2 font-medium">Type</th>
                 <th className="px-3 py-2 font-medium">Default</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200">
+            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
               {[
                 ["label", "ReactNode", "-"],
                 ["value", "string", "-"],
@@ -131,8 +132,8 @@ export function RadioGroupPage() {
               ].map(([prop, type, fallback]) => (
                 <tr key={prop}>
                   <td className="px-3 py-2 font-mono text-xs">{prop}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{type}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-neutral-500">{fallback}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{type}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{fallback}</td>
                 </tr>
               ))}
             </tbody>
