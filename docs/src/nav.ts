@@ -50,6 +50,7 @@ export const docsNav: WNavItem[] = withDocsBase([
       { href: "/switch", label: "Switch" },
       { href: "/radio-group", label: "Radio Group" },
       { href: "/select", label: "Select" },
+      { href: "/date-picker", label: "Date Picker" },
       { href: "/slider", label: "Slider" },
     ],
   },

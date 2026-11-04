@@ -16,6 +16,7 @@ import { CheckboxPage } from "./pages/CheckboxPage.tsx"
 import { ChipPage } from "./pages/ChipPage.tsx"
 import { CodeBlockPage } from "./pages/CodeBlockPage.tsx"
 import { ContainerPage } from "./pages/ContainerPage.tsx"
+import { DatePickerPage } from "./pages/DatePickerPage.tsx"
 import { DropdownPage } from "./pages/DropdownPage.tsx"
 import { FormFieldPage } from "./pages/FormFieldPage.tsx"
 import { InputPage } from "./pages/InputPage.tsx"
@@ -63,6 +64,7 @@ const pages = {
   "/switch": SwitchPage,
   "/radio-group": RadioGroupPage,
   "/select": SelectPage,
+  "/date-picker": DatePickerPage,
   "/form-field": FormFieldPage,
   "/dropdown": DropdownPage,
   "/separator": SeparatorPage,
