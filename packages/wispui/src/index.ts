@@ -11,6 +11,7 @@ export { WCheckbox, type WCheckboxProps } from "./components/WCheckbox"
 export { WChip, type WChipProps } from "./components/WChip"
 export { WCodeBlock, type WCodeBlockProps, type WCodeBlockVariant } from "./components/WCodeBlock"
 export { WContainer, type WContainerProps } from "./components/WContainer"
+export { WDatePicker, type WDatePickerProps } from "./components/WDatePicker"
 export {
   WDropdown,
   type WDropdownItem,
